@@ -1,29 +1,33 @@
 /* slider-carousel.css */
-.slider{
-    margin: 1rem auto;
-    display: flex;
-  }
+.slider {
+  margin: 1rem auto;
+  display: flex;
+}
 /* Common styles for the carousel section */
 .slider-carousel {
-    max-width: 100%;
-    overflow-x: auto;
-    padding: 3rem;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 3rem;
+}
+
+.slider-carousel h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Show the default slick dots on small screens */
+@media (max-width: 768px) {
+  .slider-carousel {
+    overflow-x: hidden;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1px;
   }
-  
-  .slider-carousel h2 {
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  .slider {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
   }
-  
-  
-  /* Show the default slick dots on small screens */
-  @media (max-width: 768px) {
-    .slick-dots {
-      display: block;
-      text-align: center;
-      margin: 15px 0;
-    }
-  }
-  
+}

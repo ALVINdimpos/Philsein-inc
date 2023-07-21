@@ -1,7 +1,14 @@
+import { Link } from 'react-router-dom'
+import '../../assets/Style/SlidingCard.css'
 
-import '../../assets/Style/SlidingCard.css';
-
-const SlidingCard = ({ title, salary, location, schedule, workingCondition }) => {
+const SlidingCard = ({
+  id,
+  title,
+  salary,
+  location,
+  schedule,
+  workingCondition,
+}) => {
   return (
     <div className="sliding-card">
       <div className="card-header">
@@ -25,11 +32,13 @@ const SlidingCard = ({ title, salary, location, schedule, workingCondition }) =>
           <span className="item-value">{workingCondition}</span>
         </div>
         <div className="button">
-          <button>EN SAVOIR PLUS</button>
+          <Link to={`/job/${id}`} className="button">
+            EN SAVOIR PLUS
+          </Link>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SlidingCard;
+export default SlidingCard

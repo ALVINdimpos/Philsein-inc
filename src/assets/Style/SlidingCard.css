@@ -1,60 +1,65 @@
 /* SlidingCard.css */
 
 .sliding-card {
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    overflow: hidden;
-    padding: 20px;
-    margin: 1rem 1rem 0;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding: 20px;
+  margin: 1rem 1rem 0;
+}
+
+.card-header {
+  background: linear-gradient(127deg, #56e0e0 0%, #007299 100%);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-details {
+  padding: 16px 0;
+  font-size: 24px;
+}
+
+.card-item {
+  margin-bottom: 10px;
+}
+
+.item-label {
+  font-weight: bold;
+  flex-basis: 50%; /* Allocate 50% of the available space to the label */
+  font-size: 20px !important;
+}
+
+.item-value {
+  flex: 1; /* Allow the value to take the remaining available space */
+  word-wrap: break-word; /* Ensure long text wraps */
+  font-size: 20px !important;
+}
+
+.button {
+  text-align: center;
+}
+
+.button {
+  background: linear-gradient(127deg, #56e0e0 0%, #007299 100%);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button button:hover {
+  background-color: #0056b3;
+}
+@media (max-width: 768px) {
+  .sliding-card {
+    margin: 1rem 0;
   }
-  
-  .card-header {
-    background: linear-gradient(127deg, #56e0e0 0%, #007299 100%);
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .card-details {
-    padding: 16px 0;
-    font-size: 24px;
-  }
-  
-  .card-item {
-    margin-bottom: 10px;
-  }
-  
-  .item-label {
-    font-weight: bold;
-    flex-basis: 50%; /* Allocate 50% of the available space to the label */
-  }
-  
-  .item-value {
-    flex: 1; /* Allow the value to take the remaining available space */
-    word-wrap: break-word; /* Ensure long text wraps */
-    font-size: 20px;
-  }
-  
-  .button {
-    text-align: center;
-  }
-  
-  .button button {
-   background: linear-gradient(127deg, #56e0e0 0%, #007299 100%);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 8px 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button button:hover {
-    background-color: #0056b3;
-  }
-  
+}

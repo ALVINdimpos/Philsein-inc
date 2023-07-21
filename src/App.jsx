@@ -1,8 +1,8 @@
-import ROUTES from "./Routes/index"
+import ROUTES from './Routes/index'
 function App() {
   return (
     <div className="App">
-      <ROUTES/>
+      <ROUTES />
     </div>
   )
 }
