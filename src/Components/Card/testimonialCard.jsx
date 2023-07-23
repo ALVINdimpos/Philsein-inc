@@ -1,5 +1,5 @@
 const TestimonialCard = ({ testimonial }) => {
-  const { name, role, message } = testimonial;
+  const { name, role, message } = testimonial
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-4 gap-10 text-xl">
@@ -18,9 +18,7 @@ const TestimonialCard = ({ testimonial }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TestimonialCard;
-
-
+export default TestimonialCard
