@@ -41,14 +41,6 @@ const Navigation = () => {
             duration={500}
             onClick={handleMenuClick}
           >
-            Accueil
-          </Link>
-          <Link
-            to="welcome"
-            smooth={true}
-            duration={500}
-            onClick={handleMenuClick}
-          >
             Offres d'emplois courantes
           </Link>
           <div className="navbar-dropdown">
@@ -208,11 +200,8 @@ const Navigation = () => {
             Blog
           </Link>
         </div>
-        <Link
-          className="btn"
-          to="/login"
-        >
-         Connexion
+        <Link className="btn" to="/login">
+          Connexion
         </Link>
         <div className="menu-icon" onClick={handleMenuClick}>
           <span></span>

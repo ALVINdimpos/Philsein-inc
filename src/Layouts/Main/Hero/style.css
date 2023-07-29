@@ -64,12 +64,12 @@
   margin-bottom: 30px;
 }
 
-.apply-button {
+.Apply-button {
   background: linear-gradient(127deg, #56e0e0 0%, #007299 100%);
   box-shadow: 0px 10px 15px 0px rgba(1, 115, 153, 0.2);
   color: #fff !important;
   border: none;
-  padding: 20px 30px;
+  padding: 15px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -95,10 +95,10 @@
   .description {
     font-size: 14px;
   }
-  .hero-image{
+  .hero-image {
     display: none;
   }
-  .heroFooter{
+  .heroFooter {
     flex-direction: column;
   }
 }

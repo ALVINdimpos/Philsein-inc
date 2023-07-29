@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LANDING from "../Pages/landing"
-import LOGIN from "../Pages/login"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import LANDING from '../Pages/landing'
+import LOGIN from '../Pages/login'
 // import FOOTER from "../Layouts/Footer/index"
 // import REGISTER from "../Pages/register"
 // import JOBS from "../Pages/jobs"
-// import JOB from "../Pages/job"
+import JOB from '../Pages/job'
 // import ABOUT from "../Pages/about"
 // import CONTACT from "../Pages/contact"
 // import BLOG from "../Pages/blog"
@@ -14,16 +14,17 @@ import LOGIN from "../Pages/login"
 // import ADVANTAGES from "../Pages/advantages"
 // import VALUES from "../Pages/values"
 
-export default function index(){
-    return(
-        <BrowserRouter>
-        <Routes>
-            <Route index element={<LANDING />} />
-            <Route path="login" element={<LOGIN />} />
-        </Routes>
-      </BrowserRouter>
+export default function index() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<LANDING />} />
+        <Route path="login" element={<LOGIN />} />
+        <Route path="job/:id" element={<JOB />} />
+      </Routes>
+    </BrowserRouter>
 
-            /* <Route path="/register">
+    /* <Route path="/register">
                     <REGISTER/>
                 </Route>
                 <Route path="/jobs">
@@ -56,5 +57,5 @@ export default function index(){
                 <Route path="/values">
                     <VALUES/>
                 </Route> */
-    )
+  )
 }
