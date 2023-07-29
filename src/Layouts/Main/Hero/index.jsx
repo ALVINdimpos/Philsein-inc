@@ -2,6 +2,7 @@ import hero from '../../../assets/Images/hero.svg'
 import { FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi'
 import { FaFacebookF } from 'react-icons/fa'
 import './style.css'
+import { Link } from 'react-router-dom'
 const index = () => {
   return (
     <section className="hero">
@@ -15,7 +16,7 @@ const index = () => {
           disponible maintenant, partout au Québec.
         </p>
         <div className="heroFooter">
-          <button className="Apply-button">APPLIQUEZ MAINTENANT</button>
+          <Link  to="/application" className="Apply-button">APPLIQUEZ MAINTENANT</Link>
           <div className="socials">
             <a
               href="https://twitter.com/PhilseinInc"
