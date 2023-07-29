@@ -1,6 +1,6 @@
 import MissionP from '../../../assets/Images/Group 129.svg'
 import './style.css'
-const mission = () => {
+const Mission = () => {
   return (
     <div className="mission-section">
       <div className="mission-content">
@@ -19,4 +19,4 @@ const mission = () => {
   )
 }
 
-export default mission
+export default Mission
