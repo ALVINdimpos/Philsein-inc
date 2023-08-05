@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 import '../../assets/Style/SlidingCard.css'
 
 const SlidingCard = ({
-  id,
   title,
   salary,
   location,
   schedule,
   workingCondition,
+  link,
 }) => {
   return (
     <div className="sliding-card">
@@ -32,7 +32,7 @@ const SlidingCard = ({
           <span className="item-value">{workingCondition}</span>
         </div>
         <div className="button">
-          <Link to={`/job/${id}`} className="button">
+          <Link to={`/${link}`} className="button">
             EN SAVOIR PLUS
           </Link>
         </div>

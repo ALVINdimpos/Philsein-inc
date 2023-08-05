@@ -16,7 +16,9 @@ const index = () => {
           les travailleurs sociaux et les professionnels de réadaptation
           physiques avec nous!
         </p>
-        <Link to="/advantages" className="advantages-button">Nos avantages</Link>
+        <Link to="/advantages" className="advantages-button">
+          Nos avantages
+        </Link>
       </div>
     </div>
   )

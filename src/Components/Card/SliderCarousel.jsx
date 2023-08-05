@@ -15,6 +15,7 @@ const SliderCarousel = () => {
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec",
       schedule: 'Temps plein⚫ Jour & soir',
       workingCondition: 'Postes à long terme ⚫ 35h semaines',
+      link: 'job-physiotherapist',
     },
     {
       id: 2,
@@ -26,6 +27,7 @@ const SliderCarousel = () => {
         "Flexibles; possibilité de moduler l'horaire selon ses disponibilités.",
       workingCondition:
         'Remplacement ponctuel, court, moyen et long terme à travers le Québec',
+      link: 'job-nurse-auxiliary',
     },
     {
       id: 3,
@@ -35,6 +37,7 @@ const SliderCarousel = () => {
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec.",
       schedule: 'Temps plein⚫ Jour & soir',
       workingCondition: 'Postes à long terme. 35h semaines',
+      link: 'job-social-worker',
     },
     {
       id: 4,
@@ -46,6 +49,7 @@ const SliderCarousel = () => {
         "Flexibles; possibilité de moduler l'horaire selon ses disponibilités.",
       workingCondition:
         'Remplacement ponctuel, court, moyen et long terme à travers le Québec',
+      link: 'job-nurse',
     },
   ]
 
