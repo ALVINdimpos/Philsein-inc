@@ -13,7 +13,7 @@ import JobPhysiotherapist from '../Pages/JobPhysiotherapist'
 import JobInhalotherapist from '../Pages/JobInhalotherapist'
 import JobPreposeAuxBeneficiaires from '../Pages/JobPreposeAuxBeneficiaires'
 import JobTechnicienTravailSocial from '../Pages/JobTechnicienTravailSocial'
-import Dashboad from "../dashboad/index"
+import {Home, Blogs, Quapps, Queries, Staff_forms, Referrals} from '../dashboad'
 // import ABOUT from "../Pages/about"
 import CONTACT from '../Pages/contact'
 // import BLOG from "../Pages/blog"
@@ -46,7 +46,12 @@ export default function index() {
         <Route path="/job-inhalotherapist" element={<JobInhalotherapist />} />
         <Route path="/job-prepose-aux-beneficiaires" element={<JobPreposeAuxBeneficiaires />} />
         <Route path="/job-technicien-travail-social" element={<JobTechnicienTravailSocial />} />
-        <Route path="/dashboad" element={<Dashboad />} />
+        <Route path="/dashboard" element={<Home />} />
+        <Route path="/dashboard/apps" element={<Quapps />} />
+        <Route path="/dashboard/referrals" element={<Referrals />} />
+        <Route path="/dashboard/blogs" element={<Blogs />} />
+        <Route path="/dashboard/queries" element={<Queries />} />
+        <Route path="/dashboard/staff-apps" element={<Staff_forms />} />
       </Routes>
     </BrowserRouter>
   )
