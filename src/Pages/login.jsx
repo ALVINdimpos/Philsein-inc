@@ -1,27 +1,30 @@
-import axios from 'axios';
-import '../assets/Style/login.css';
-import logo from '../assets/Images/logo.svg';
+import axios from 'axios'
+import '../assets/Style/login.css'
+import logo from '../assets/Images/logo.svg'
 
 const Login = () => {
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const formDataObject = {};
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const formDataObject = {}
     formData.forEach((value, key) => {
-      formDataObject[key] = value;
-    });
+      formDataObject[key] = value
+    })
 
     try {
-      const response = await axios.post('http://localhost:3000/users/login', formDataObject);
-      console.log('API Response:', response.data);
+      const response = await axios.post(
+        'http://localhost:3000/users/login',
+        formDataObject
+      )
+      console.log('API Response:', response.data)
       // You can handle the API response here
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error)
       // Handle errors here if any
       // kagabaetienne04@gmail.com
       //test123
     }
-  };
+  }
   return (
     <div className="main">
       <div className="Container" id="Container">
@@ -29,7 +32,7 @@ const Login = () => {
           <form action="#" onSubmit={handleSubmit}>
             <h1>Connexion</h1>
             <div className="social-Container">
-             <img src={logo} alt="" />
+              <img src={logo} alt="" />
             </div>
             <span>ou utilisez votre compte</span>
             <input type="email" name="email" placeholder="Email" required />
@@ -52,7 +55,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

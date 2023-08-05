@@ -13,7 +13,7 @@ const CareerSection = () => {
           à notre formulaire d’application rapide!
         </p>
         <button onClick={handleAplyNow}>APPLIQUER MAINTENANT</button>
-      </div> 
+      </div>
       <div className="image">
         <img
           src={Image}

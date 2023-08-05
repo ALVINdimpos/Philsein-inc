@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import axios from 'axios';
-import '../assets/Style/Referral.css';
-import Footer from '../Layouts/Footer/index';
-import HEADER from '../Layouts/Header/index';
-import { ToastContainer,toast } from 'react-toastify';
+import { useState } from 'react'
+import axios from 'axios'
+import '../assets/Style/Referral.css'
+import Footer from '../Layouts/Footer/index'
+import HEADER from '../Layouts/Header/index'
+import { ToastContainer, toast } from 'react-toastify'
 
 const ReferralProgram = () => {
   const [formData1, setFormData1] = useState({
@@ -11,7 +11,7 @@ const ReferralProgram = () => {
     last_name: '',
     email: '',
     phone: '',
-  });
+  })
 
   const [formData2, setFormData2] = useState({
     first_name: '',
@@ -20,49 +20,58 @@ const ReferralProgram = () => {
     phone: '',
     position: '',
     relationship_with_referer: '',
-  });
+  })
 
-  const [showSecondForm, setShowSecondForm] = useState(false);
+  const [showSecondForm, setShowSecondForm] = useState(false)
 
   const handleChange1 = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
     setFormData1((prevData) => ({
       ...prevData,
       [name]: value,
-    }));
-  };
+    }))
+  }
 
   const handleChange2 = (event) => {
-    const { name, value, type, checked } = event.target;
+    const { name, value, type, checked } = event.target
     setFormData2((prevData) => ({
       ...prevData,
-      [name]: type === 'checkbox' ? (checked ? [...prevData[name], value] : prevData[name].filter((item) => item !== value)) : value,
-    }));
-  };
+      [name]:
+        type === 'checkbox'
+          ? checked
+            ? [...prevData[name], value]
+            : prevData[name].filter((item) => item !== value)
+          : value,
+    }))
+  }
 
   const handleNextPage = (event) => {
-    event.preventDefault();
-    setShowSecondForm(true);
-  };
+    event.preventDefault()
+    setShowSecondForm(true)
+  }
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     const mergedFormData = {
       referer: formData1,
-      referee: formData2 };
- console.log(formData1,formData2)
+      referee: formData2,
+    }
+    console.log(formData1, formData2)
     try {
-      const response = await axios.post('http://localhost:3000/refer', mergedFormData);
-      toast.success('Votre message a été envoyé avec succès');
+      const response = await axios.post(
+        'http://localhost:3000/refer',
+        mergedFormData
+      )
+      toast.success('Votre message a été envoyé avec succès')
       // reload window
       setTimeout(() => {
-        window.location.reload();
-      }, 3000);
+        window.location.reload()
+      }, 3000)
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error)
       // Handle errors here if any
     }
-  };
+  }
 
   const relationship_with_referer_with_refererOptions = [
     'Infirmier(ère)',
@@ -71,7 +80,7 @@ const ReferralProgram = () => {
     'Travailleur(euse) sociale',
     'Technicien(enne) en laboratoire',
     'Auxiliaire en santé et services sociaux',
-  ];
+  ]
 
   return (
     <>
@@ -79,7 +88,10 @@ const ReferralProgram = () => {
       <div className="Referral min-h-screen flex flex-col justify-center items-center text-white">
         <div className="container px-6 py-12 mx-auto">
           {!showSecondForm && (
-            <form className="max-w-lg mx-auto mt-12 p-6 bg-white rounded-lg shadow-md" onSubmit={handleNextPage}>
+            <form
+              className="max-w-lg mx-auto mt-12 p-6 bg-white rounded-lg shadow-md"
+              onSubmit={handleNextPage}
+            >
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   Êtes-vous présentement un employé du Philsein inc?
@@ -106,11 +118,13 @@ const ReferralProgram = () => {
                     <span className="ml-2 text-black">Non</span>
                   </label>
                   {/* Show the message when "No" is selected */}
-                {formData1.relationship_with_referer_with_referer === 'no' && (
-                  <p className="text-red-500 mt-2">
-                    Il faut être un employé du Groupe ADR pour profiter de notre programme de référencement!
-                  </p>
-                )}
+                  {formData1.relationship_with_referer_with_referer ===
+                    'no' && (
+                    <p className="text-red-500 mt-2">
+                      Il faut être un employé du Groupe ADR pour profiter de
+                      notre programme de référencement!
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -180,7 +194,10 @@ const ReferralProgram = () => {
           )}
 
           {showSecondForm && (
-            <form className="max-w-lg mx-auto mt-12 p-6 bg-white rounded-lg shadow-md" onSubmit={handleSubmit}>
+            <form
+              className="max-w-lg mx-auto mt-12 p-6 bg-white rounded-lg shadow-md"
+              onSubmit={handleSubmit}
+            >
               <p className="text-base font-semibold max-w-prose mx-auto text-black mb-4">
                 Information sur la personne référée
               </p>
@@ -237,20 +254,24 @@ const ReferralProgram = () => {
                 </div>
               </div>
               <div className="mb-4">
-                <label className="block text-gray-700 font-semibold mb-2">Poste actuel de la personne référée?</label>
+                <label className="block text-gray-700 font-semibold mb-2">
+                  Poste actuel de la personne référée?
+                </label>
                 <div className="flex flex-col">
-                  {relationship_with_referer_with_refererOptions.map((option) => (
-                    <label className="block items-center" key={option}>
-                      <input
-                        type="radio"
-                        name="position"
-                        className="form-radio h-4 w-4 text-blue-500"
-                        value={option}
-                        onChange={handleChange2}
-                      />
-                      <span className="ml-2 text-black">{option}</span>
-                    </label>
-                  ))}
+                  {relationship_with_referer_with_refererOptions.map(
+                    (option) => (
+                      <label className="block items-center" key={option}>
+                        <input
+                          type="radio"
+                          name="position"
+                          className="form-radio h-4 w-4 text-blue-500"
+                          value={option}
+                          onChange={handleChange2}
+                        />
+                        <span className="ml-2 text-black">{option}</span>
+                      </label>
+                    )
+                  )}
                 </div>
               </div>
               <div className="mb-4">
@@ -263,7 +284,9 @@ const ReferralProgram = () => {
                   onChange={handleChange2}
                 >
                   <option value="">Veuillez sélectionner</option>
-                  <option value="Collègue de travail">Collègue de travail</option>
+                  <option value="Collègue de travail">
+                    Collègue de travail
+                  </option>
                   <option value="Ami(e)">Ami(e)</option>
                   <option value="Inconnu(e)">Inconnu(e)</option>
                 </select>
@@ -290,7 +313,7 @@ const ReferralProgram = () => {
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default ReferralProgram;
+export default ReferralProgram

@@ -7,7 +7,7 @@ const SlidingCard = ({
   location,
   schedule,
   workingCondition,
-  link
+  link,
 }) => {
   return (
     <div className="sliding-card">

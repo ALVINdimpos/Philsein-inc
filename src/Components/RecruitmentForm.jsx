@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import axios from 'axios';
-import Cards from '../Components/Card/index';
-import '../assets/Style/Recruitment.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { useState } from 'react'
+import axios from 'axios'
+import Cards from '../Components/Card/index'
+import '../assets/Style/Recruitment.css'
+import { ToastContainer, toast } from 'react-toastify'
 
 const RecruitmentForm = () => {
   const [formData, setFormData] = useState({
-    want_to_hire:"",
+    want_to_hire: '',
     first_name: '',
     last_name: '',
     company_name: '',
@@ -15,24 +15,24 @@ const RecruitmentForm = () => {
     phone_number: '',
     city: '',
     province: '',
-  });
+  })
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
-    }));
-  };
+    }))
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:3000/staff', formData);
-      console.log('API Response:', response.data);
-      toast.success('Votre message a été envoyé avec succès');
+      const response = await axios.post('http://localhost:3000/staff', formData)
+      console.log('API Response:', response.data)
+      toast.success('Votre message a été envoyé avec succès')
       setFormData({
-        want_to_hire:"",
+        want_to_hire: '',
         first_name: '',
         last_name: '',
         company_name: '',
@@ -41,20 +41,20 @@ const RecruitmentForm = () => {
         phone_number: '',
         city: '',
         province: '',
-      }); // Clear the form fields
+      }) // Clear the form fields
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error)
       // Handle errors here if any
     }
-  };
+  }
   // Options for the select element
   const jobOptions = [
-    'Personnel de l\'entrepôt',
+    "Personnel de l'entrepôt",
     'Chauffeur de camion',
     'Travailleurs agricoles',
     'Ouvriers du commerce',
     'Autres membres du personnel',
-  ];
+  ]
 
   return (
     <div className="container mx-auto py-6 flex flex-col md:flex-row items-center justify-between">
@@ -144,7 +144,10 @@ const RecruitmentForm = () => {
             />
           </div>
           <div className="mb-2">
-            <label htmlFor="size_of_company" className="block font-semibold mb-1">
+            <label
+              htmlFor="size_of_company"
+              className="block font-semibold mb-1"
+            >
               Taille de l'entreprise
             </label>
             <select

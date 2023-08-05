@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import axios from 'axios';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
-import Footer from '../Layouts/Footer/index';
-import HEADER from '../Layouts/Header/index';
-import { ToastContainer, toast } from 'react-toastify';
+import { useState } from 'react'
+import axios from 'axios'
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa'
+import Footer from '../Layouts/Footer/index'
+import HEADER from '../Layouts/Header/index'
+import { ToastContainer, toast } from 'react-toastify'
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -11,30 +11,33 @@ const ContactUs = () => {
     last_name: '',
     email: '',
     message: '',
-  });
+  })
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     try {
-      const response = await axios.post('http://localhost:3000/contact', formData);
+      const response = await axios.post(
+        'http://localhost:3000/contact',
+        formData
+      )
       console.log('API Response:', response.data)
-      toast.success('Votre message a été envoyé avec succès');
+      toast.success('Votre message a été envoyé avec succès')
       // reload window
       setTimeout(() => {
-        window.location.reload();
-      }, 3000);
+        window.location.reload()
+      }, 3000)
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error)
       // Handle errors here if any
     }
-  };
+  }
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
-    }));
-  };
+    }))
+  }
 
   return (
     <div>
@@ -72,7 +75,7 @@ const ContactUs = () => {
             <form className="max-w-md" onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block font-semibold mb-1">
-                Prénom *
+                  Prénom *
                 </label>
                 <input
                   type="text"
@@ -135,7 +138,7 @@ const ContactUs = () => {
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default ContactUs;
+export default ContactUs

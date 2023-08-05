@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import Footer from '../Layouts/Footer/index';
-import HEADER from '../Layouts/Header/index';
-import axios from 'axios';
+import { useState } from 'react'
+import Footer from '../Layouts/Footer/index'
+import HEADER from '../Layouts/Header/index'
+import axios from 'axios'
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -19,38 +19,43 @@ const ApplicationForm = () => {
     schedule: [],
     resume_by_email: '',
     resume: null,
-  });
+  })
 
   const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
+    const { name, value, type, checked } = event.target
 
     setFormData((prevData) => ({
       ...prevData,
-      [name]: type === 'checkbox' ? (checked ? [...prevData[name], value] : prevData[name].filter(item => item !== value)) : value,
-    }));
-  };
+      [name]:
+        type === 'checkbox'
+          ? checked
+            ? [...prevData[name], value]
+            : prevData[name].filter((item) => item !== value)
+          : value,
+    }))
+  }
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
+    const file = event.target.files[0]
     setFormData((prevData) => ({
       ...prevData,
       resume: file,
-    }));
-  };
+    }))
+  }
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log('Form Values:', formData);
+    event.preventDefault()
+    console.log('Form Values:', formData)
 
     try {
-      const response = await axios.post('http://localhost:3000/apply', formData);
-      console.log('API Response:', response.data);
+      const response = await axios.post('http://localhost:3000/apply', formData)
+      console.log('API Response:', response.data)
       // You can handle the API response here
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error)
       // Handle errors here if any
     }
-  };
+  }
 
   const regions = [
     'Gaspésie',
@@ -114,7 +119,6 @@ const ApplicationForm = () => {
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Prénom"
               />
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -128,7 +132,6 @@ const ApplicationForm = () => {
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Nom"
               />
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -142,7 +145,6 @@ const ApplicationForm = () => {
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="(000) 000-0000"
               />
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -156,7 +158,6 @@ const ApplicationForm = () => {
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Exemple : info@example.com"
               />
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -170,7 +171,6 @@ const ApplicationForm = () => {
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Adresse"
               />
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -184,7 +184,6 @@ const ApplicationForm = () => {
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Adresse 2"
               />
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -198,7 +197,6 @@ const ApplicationForm = () => {
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Ville"
               />
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -212,7 +210,6 @@ const ApplicationForm = () => {
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Province"
               />
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -226,11 +223,11 @@ const ApplicationForm = () => {
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Code Postal"
               />
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
-                Avez-vous le statut de résident permanent OU citoyen canadien OU un permis de travail au Canada ?
+                Avez-vous le statut de résident permanent OU citoyen canadien OU
+                un permis de travail au Canada ?
               </label>
               <div className="flex items-center">
                 <input
@@ -254,7 +251,6 @@ const ApplicationForm = () => {
                 />
                 <label className="ml-2 block text-gray-700">Non</label>
               </div>
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -273,7 +269,6 @@ const ApplicationForm = () => {
                   </option>
                 ))}
               </select>
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -290,13 +285,10 @@ const ApplicationForm = () => {
                       onChange={handleChange}
                       className="form-checkbox h-5 w-5 text-cyan-600"
                     />
-                    <label className="ml-2 block text-gray-700">
-                      {region}
-                    </label>
+                    <label className="ml-2 block text-gray-700">{region}</label>
                   </div>
                 ))}
               </div>
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -319,7 +311,6 @@ const ApplicationForm = () => {
                   </div>
                 ))}
               </div>
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -347,7 +338,6 @@ const ApplicationForm = () => {
                 />
                 <label className="ml-2 block text-gray-700">Non</label>
               </div>
-     
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
@@ -359,7 +349,6 @@ const ApplicationForm = () => {
                 onChange={handleFileChange}
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
               />
-     
             </div>
             <button
               type="submit"
@@ -372,7 +361,7 @@ const ApplicationForm = () => {
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default ApplicationForm;
+export default ApplicationForm

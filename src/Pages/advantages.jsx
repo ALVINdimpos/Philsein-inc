@@ -65,7 +65,10 @@ const Advantages = () => {
                 </p>
               </div>
               <div className="text-center">
-                <Link to="/application" className="btn-apply mt-6 py-3 px-6 rounded-lg text-white font-bold bg-gradient-to-r from-cyan-400 to-blue-700 hover:opacity-90 transition-colors duration-300">
+                <Link
+                  to="/application"
+                  className="btn-apply mt-6 py-3 px-6 rounded-lg text-white font-bold bg-gradient-to-r from-cyan-400 to-blue-700 hover:opacity-90 transition-colors duration-300"
+                >
                   Appliquez maintenant
                 </Link>
               </div>

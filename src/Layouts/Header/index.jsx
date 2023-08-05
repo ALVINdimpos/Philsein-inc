@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import logo from '../../assets/Images/logo.svg';
-import { RiArrowDropDownLine } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
-import './style.css';
+import { useState } from 'react'
+import logo from '../../assets/Images/logo.svg'
+import { RiArrowDropDownLine } from 'react-icons/ri'
+import { Link } from 'react-router-dom'
+import './style.css'
 
 const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   return (
     <header className="header">
@@ -66,13 +66,21 @@ const Navigation = () => {
               <NavItem to="/jobs" title="Tous nos emplois disponibles" />
               <NavItem to="/featured-jobs" title="Emplois en vedette" />
               <NavItem to="/job-nurse" title="Infirmière" />
-              <NavItem to="/job-nurse-auxiliary" title="Infirmière auxiliaire" />
+              <NavItem
+                to="/job-nurse-auxiliary"
+                title="Infirmière auxiliaire"
+              />
               <NavItem to="/job-physiotherapist" title="Physiothérapeute" />
               <NavItem to="/job-social-worker" title="Travailleur social" />
-              <NavItem to="/job-occupational-therapist" title="Ergothérapeute" />
+              <NavItem
+                to="/job-occupational-therapist"
+                title="Ergothérapeute"
+              />
               <NavItem to="/job-inhalotherapist" title="Inhalothérapeute" />
-              <NavItem to="/job-respiratory-therapist" title="Thérapeute respiratoire" />
-              
+              <NavItem
+                to="/job-respiratory-therapist"
+                title="Thérapeute respiratoire"
+              />
             </ul>
           </li>
 
@@ -103,17 +111,22 @@ const Navigation = () => {
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
 
 const NavItem = ({ to, title }) => {
   return (
     <li className="text-white md:mx-4">
-      <Link to={to} smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+      <Link
+        to={to}
+        smooth={true}
+        duration={500}
+        onClick={() => setIsMenuOpen(false)}
+      >
         {title}
       </Link>
     </li>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation
