@@ -49,3 +49,25 @@
   width: 100%;
   max-width: 400px;
 }
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .career-section {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .content h2 {
+    font-size: 32px;
+  }
+
+  .content p {
+    font-size: 18px;
+  }
+
+  .content button {
+    padding: 15px 25px !important;
+  }
+  .image img {
+    display: none;
+  }
+}

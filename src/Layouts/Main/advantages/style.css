@@ -63,5 +63,18 @@
 @media screen and (max-width: 768px) {
   .advantages-section {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .advantages-content h2 {
+    font-size: 32px;
+  }
+
+  .advantages-content p {
+    font-size: 18px;
+    width: 100%;
+  }
+  .advantages-image img {
+    display: none;
   }
 }

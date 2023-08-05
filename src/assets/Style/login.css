@@ -114,18 +114,33 @@
 .social-Container {
   margin: 50px 0;
 }
-
-.social-Container a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
+.social-Container img {
   height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(127deg, #56e0e0 0%, #007299 100%);
-  color: #fff; /* Change the icon color as needed */
-  margin: 5px;
-  font-size: 18px;
-  text-decoration: none;
-  transition: background-color 0.3s ease-in-out;
+  margin: 0 12px;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .Container {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .form-Container,
+  .overlay-Container {
+    width: 100%;
+  }
+
+  .overlay-panel {
+    width: 100%;
+  }
+
+  .log-in-Container {
+    width: 100%;
+    z-index: 2;
+  }
+
+  .overlay {
+    width: 100%;
+  }
 }

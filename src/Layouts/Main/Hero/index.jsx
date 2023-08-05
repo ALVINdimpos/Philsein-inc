@@ -16,7 +16,9 @@ const index = () => {
           disponible maintenant, partout au Québec.
         </p>
         <div className="heroFooter">
-          <Link  to="/application" className="Apply-button">APPLIQUEZ MAINTENANT</Link>
+          <Link to="/application" className="Apply-button">
+            APPLIQUEZ MAINTENANT
+          </Link>
           <div className="socials">
             <a
               href="https://twitter.com/PhilseinInc"

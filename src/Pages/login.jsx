@@ -1,17 +1,30 @@
-import '../assets/Style/login.css';
-import { FcGoogle, FcCamera } from 'react-icons/fc';
+import axios from 'axios'
+import '../assets/Style/login.css'
+import logo from '../assets/Images/logo.svg'
 
 const Login = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const formDataObject = {};
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const formDataObject = {}
     formData.forEach((value, key) => {
-      formDataObject[key] = value;
-    });
-    console.log("Form Data:", formDataObject);
-  };
+      formDataObject[key] = value
+    })
 
+    try {
+      const response = await axios.post(
+        'http://localhost:3000/users/login',
+        formDataObject
+      )
+      console.log('API Response:', response.data)
+      // You can handle the API response here
+    } catch (error) {
+      console.error('Error:', error)
+      // Handle errors here if any
+      // kagabaetienne04@gmail.com
+      //test123
+    }
+  }
   return (
     <div className="main">
       <div className="Container" id="Container">
@@ -19,12 +32,7 @@ const Login = () => {
           <form action="#" onSubmit={handleSubmit}>
             <h1>Connexion</h1>
             <div className="social-Container">
-              <a href="#" className="social">
-                <FcGoogle />
-              </a>
-              <a href="#" className="social">
-                <FcCamera />
-              </a>
+              <img src={logo} alt="" />
             </div>
             <span>ou utilisez votre compte</span>
             <input type="email" name="email" placeholder="Email" required />
@@ -47,7 +55,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

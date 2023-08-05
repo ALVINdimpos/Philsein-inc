@@ -63,5 +63,18 @@
 @media screen and (max-width: 768px) {
   .mission-section {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-content h2 {
+    font-size: 32px;
+  }
+
+  .mission-content p {
+    font-size: 18px;
+    width: 100%;
+  }
+  .mission-image img {
+    display: none;
   }
 }
