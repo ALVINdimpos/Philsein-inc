@@ -127,6 +127,7 @@ export default function queries() {
                         </tbody>
                     </table>
                 </div>
+                <ToastContainer/>
             </section>
         </Layout>
     )
