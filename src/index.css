@@ -29,7 +29,3 @@ a {
 a:hover {
   color: var(--primary-color) !important;
 }
-
-.colspan-all {
-  column-span: all;
-}

@@ -63,6 +63,7 @@ export default function index() {
           path="/job-technicien-travail-social"
           element={<JobTechnicienTravailSocial />}
         />
+        <Route path='' element="" />
       </Routes>
     </BrowserRouter>
   )
