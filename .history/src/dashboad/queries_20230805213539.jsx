@@ -72,7 +72,7 @@ export default function queries() {
                 </div>
                 <div className="bg-white shadow rounded-sm flex justify-between items-center py-3.5 px-3.5">
                     <div className="space-y-2">
-                        <p className="text-xs text-gray-400 uppercase">Read</p>
+                        <p className="text-xs text-gray-400 uppercase"Ready</p>
                         <div className="flex items-center space-x-2">
                             <h1 className="text-xl font-semibold">243</h1>
                             <p className="text-xs bg-green-50 text-green-500 px-1 rounded">+3.1</p>

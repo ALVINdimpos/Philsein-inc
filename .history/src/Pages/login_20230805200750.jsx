@@ -1,10 +1,10 @@
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router'; 
 import '../assets/Style/login.css'
 import logo from '../assets/Images/logo.svg'
 
 const Login = () => {
-  const navigate = useNavigate(); // Create a navigate function
+  const history = useHistory(); // Create a history object
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,8 +24,8 @@ const Login = () => {
       // Store the token in local storage
       localStorage.setItem('token', response.data.token);
 
-      // Navigate to the home page
-      navigate('/dashboard');
+      // Navigate to the dashboard page
+      history.push('/dashboard');
     } catch (error) {
       console.error('Error:', error);
       // Handle errors here if any
@@ -33,7 +33,15 @@ const Login = () => {
       //test123
     }
   };
- return (
+
+  // ... (your other code)
+};
+
+
+
+
+
+  return (
     <div className="main">
       <div className="Container" id="Container">
         <div className="form-Container log-in-Container">

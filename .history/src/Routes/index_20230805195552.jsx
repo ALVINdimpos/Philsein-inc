@@ -14,6 +14,7 @@ import JobInhalotherapist from '../Pages/JobInhalotherapist'
 import JobPreposeAuxBeneficiaires from '../Pages/JobPreposeAuxBeneficiaires'
 import JobTechnicienTravailSocial from '../Pages/JobTechnicienTravailSocial'
 import {Home, Blogs, Quapps, Queries, Staff_forms, Referrals} from '../dashboad'
+import Dashboad from '../dashboad/index'
 // import ABOUT from "../Pages/about"
 import CONTACT from '../Pages/contact'
 // import BLOG from "../Pages/blog"

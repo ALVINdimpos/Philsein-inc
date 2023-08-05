@@ -23,9 +23,7 @@ const Login = () => {
 
       // Store the token in local storage
       localStorage.setItem('token', response.data.token);
-
-      // Navigate to the home page
-      navigate('/dashboard');
+      
     } catch (error) {
       console.error('Error:', error);
       // Handle errors here if any

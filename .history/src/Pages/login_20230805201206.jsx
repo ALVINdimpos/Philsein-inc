@@ -25,7 +25,7 @@ const Login = () => {
       localStorage.setItem('token', response.data.token);
 
       // Navigate to the home page
-      navigate('/dashboard');
+      navigate('/');
     } catch (error) {
       console.error('Error:', error);
       // Handle errors here if any

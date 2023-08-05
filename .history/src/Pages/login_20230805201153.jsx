@@ -24,8 +24,8 @@ const Login = () => {
       // Store the token in local storage
       localStorage.setItem('token', response.data.token);
 
-      // Navigate to the home page
-      navigate('/dashboard');
+      // Navigate to the dashboard page
+      history.push('/dashboard');
     } catch (error) {
       console.error('Error:', error);
       // Handle errors here if any

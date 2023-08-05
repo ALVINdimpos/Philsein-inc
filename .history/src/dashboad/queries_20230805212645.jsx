@@ -1,7 +1,7 @@
 import Layout from './layout'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify'
+
 
 export default function queries() {
     const [querries, setQueries] = useState([]);
@@ -16,32 +16,14 @@ export default function queries() {
         axios.get('http://localhost:3000/queries', conf)
             .then((response) => {
                 // Handle the response data and update the state
-                setQueries(response.data.data)
+                setQueries(response.data.data);
             })
             .catch((error) => {
                 // Handle errors if any
                 console.error('Error:', error);
             });
     }, []);
-    const handleDelete = (id) => {
-        const conf = {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`
-            }
-        }
-        axios.delete(`http://localhost:3000/queries/${id}`, conf)
-            .then((response) => {
-                toast.success('Votre message a été envoyé avec succès')
-                // reload window
-                setTimeout(() => {
-                  window.location.reload()
-                }, 3000)
-            })
-            .catch((error) => {
-                // Handle errors if any
-                console.error('Error:', error);
-            });
-    }
+const handleDelete
 
     return (
         <Layout>
@@ -52,7 +34,7 @@ export default function queries() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 py-6">
                 <div className="bg-white shadow rounded-sm flex justify-between items-center py-3.5 px-3.5">
                     <div className="space-y-2">
-                        <p className="text-xs text-gray-400 uppercase">Total</p>
+                        <p className="text-xs text-gray-400 uppercase">Value</p>
                         <div className="flex items-center space-x-2">
                             <h1 className="text-xl font-semibold">$13,500</h1>
                             <p className="text-xs bg-green-50 text-green-500 px-1 rounded">+4.5</p>
@@ -62,7 +44,17 @@ export default function queries() {
                 </div>
                 <div className="bg-white shadow rounded-sm flex justify-between items-center py-3.5 px-3.5">
                     <div className="space-y-2">
-                        <p className="text-xs text-gray-400 uppercase">Unread</p>
+                        <p className="text-xs text-gray-400 uppercase">Users</p>
+                        <div className="flex items-center space-x-2">
+                            <h1 className="text-xl font-semibold">819</h1>
+                            <p className="text-xs bg-green-50 text-green-500 px-1 rounded">+7.4</p>
+                        </div>
+                    </div>
+                    <svg className="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                </div>
+                <div className="bg-white shadow rounded-sm flex justify-between items-center py-3.5 px-3.5">
+                    <div className="space-y-2">
+                        <p className="text-xs text-gray-400 uppercase">Orders</p>
                         <div className="flex items-center space-x-2">
                             <h1 className="text-xl font-semibold">121</h1>
                             <p className="text-xs bg-red-50 text-red-500 px-1 rounded">-2.9</p>
@@ -72,7 +64,7 @@ export default function queries() {
                 </div>
                 <div className="bg-white shadow rounded-sm flex justify-between items-center py-3.5 px-3.5">
                     <div className="space-y-2">
-                        <p className="text-xs text-gray-400 uppercase">Read</p>
+                        <p className="text-xs text-gray-400 uppercase">Tickets</p>
                         <div className="flex items-center space-x-2">
                             <h1 className="text-xl font-semibold">243</h1>
                             <p className="text-xs bg-green-50 text-green-500 px-1 rounded">+3.1</p>

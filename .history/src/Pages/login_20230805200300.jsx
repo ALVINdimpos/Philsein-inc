@@ -1,39 +1,33 @@
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../assets/Style/login.css'
 import logo from '../assets/Images/logo.svg'
 
 const Login = () => {
-  const navigate = useNavigate(); // Create a navigate function
-
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const formDataObject = {};
+    event.preventDefault()
+    const formData = new FormData(event.target)
+    const formDataObject = {}
     formData.forEach((value, key) => {
-      formDataObject[key] = value;
-    });
+      formDataObject[key] = value
+    })
 
     try {
       const response = await axios.post(
         'http://localhost:3000/users/login',
         formDataObject
-      );
-      console.log('API Response:', response.data);
-
-      // Store the token in local storage
+      )
       localStorage.setItem('token', response.data.token);
-
-      // Navigate to the home page
-      navigate('/dashboard');
+      console.log('API Response:', response.data)
+      // You can handle the API response here
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error)
       // Handle errors here if any
       // kagabaetienne04@gmail.com
       //test123
     }
-  };
- return (
+  }
+  return (
     <div className="main">
       <div className="Container" id="Container">
         <div className="form-Container log-in-Container">
