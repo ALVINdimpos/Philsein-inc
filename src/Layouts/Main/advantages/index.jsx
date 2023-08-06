@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import advP from '../../../assets/Images/Group 12.svg'
+import advP from '../../../assets/Images/Group 129.png'
 import './style.css'
 const index = () => {
   return (

@@ -51,7 +51,7 @@ const ContactUs = () => {
               <h2 className="text-xl font-bold mb-2">Address</h2>
               <p className="flex items-center">
                 <FaMapMarkerAlt className="mr-2 text-purple-600" />
-                4599 Boulevard Samson, Laval, QC H7W 2G5, Canada
+                570 33e Avenue Lachine H8T 1Y8 Canada
               </p>
             </div>
 
@@ -59,7 +59,7 @@ const ContactUs = () => {
               <h2 className="text-xl font-bold mb-2">Phone</h2>
               <p className="flex items-center">
                 <FaPhone className="mr-2 text-purple-600" />
-                +1 123-456-7890
+                +1 5145746455
               </p>
             </div>
 
