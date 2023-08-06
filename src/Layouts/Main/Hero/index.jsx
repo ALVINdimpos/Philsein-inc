@@ -1,4 +1,4 @@
-import hero from '../../../assets/Images/hero.svg'
+import hero from '../../../assets/Images/Group 134.png'
 import { FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi'
 import { FaFacebookF } from 'react-icons/fa'
 import './style.css'
