@@ -13,7 +13,14 @@ import JobPhysiotherapist from '../Pages/JobPhysiotherapist'
 import JobInhalotherapist from '../Pages/JobInhalotherapist'
 import JobPreposeAuxBeneficiaires from '../Pages/JobPreposeAuxBeneficiaires'
 import JobTechnicienTravailSocial from '../Pages/JobTechnicienTravailSocial'
-import {Home, Blogs, Quapps, Queries, Staff_forms, Referrals} from '../dashboad'
+import {
+  Home,
+  Blogs,
+  Quapps,
+  Queries,
+  Staff_forms,
+  Referrals,
+} from '../dashboad'
 // import ABOUT from "../Pages/about"
 import CONTACT from '../Pages/contact'
 // import BLOG from "../Pages/blog"
@@ -47,8 +54,14 @@ export default function index() {
         <Route path="/job-social-worker" element={<JobSocialWorker />} />
         <Route path="/job-physiotherapist" element={<JobPhysiotherapist />} />
         <Route path="/job-inhalotherapist" element={<JobInhalotherapist />} />
-        <Route path="/job-prepose-aux-beneficiaires" element={<JobPreposeAuxBeneficiaires />} />
-        <Route path="/job-technicien-travail-social" element={<JobTechnicienTravailSocial />} />
+        <Route
+          path="/job-prepose-aux-beneficiaires"
+          element={<JobPreposeAuxBeneficiaires />}
+        />
+        <Route
+          path="/job-technicien-travail-social"
+          element={<JobTechnicienTravailSocial />}
+        />
         <Route path="/dashboard" element={<Home />} />
         <Route path="/dashboard/apps" element={<Quapps />} />
         <Route path="/dashboard/referrals" element={<Referrals />} />
@@ -63,7 +76,7 @@ export default function index() {
           path="/job-technicien-travail-social"
           element={<JobTechnicienTravailSocial />}
         />
-        <Route path='' element="" />
+        <Route path="" element="" />
       </Routes>
     </BrowserRouter>
   )
