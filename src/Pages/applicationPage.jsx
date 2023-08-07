@@ -1,9 +1,54 @@
-import { useState } from 'react'
 import Footer from '../Layouts/Footer/index'
 import HEADER from '../Layouts/Header/index'
 import axios from 'axios'
+import { useCallback, useEffect, useState } from 'react'
+import { useDropzone} from "react-dropzone"
+import { SingleFileUpload, UploadError } from '../Components/upload'
 
 const ApplicationForm = () => {
+  const [files, setFiles] = useState([])
+  const [images, setImages] = useState([])
+
+  const onDrop = useCallback((accFiles, rejFiles) => {
+    const mappedAcc = accFiles.map(file => ({file, errors: []}));
+    setFiles(curr => [...curr, ...mappedAcc, ...rejFiles]);
+  }, [])
+
+
+  useEffect(() => {
+    const goodFiles = []
+    files.map((file) => {
+      if(!file.errors.length && file.url) {
+        goodFiles.push(file.url)
+      }
+    })
+    setImages(goodFiles)
+  }, [files])
+
+  function onDelete(file){
+    setFiles(curr => curr.filter(fw => fw.file !== file) )
+  }
+
+  function onUpload(file, url) {
+    setFiles(curr => curr.map((fw) => {
+        if(fw.file === file) {
+            return {...fw, url};
+        }
+        return fw;
+    }) )
+  }
+
+
+  const {getRootProps, getInputProps} = useDropzone({
+    onDrop, 
+    accept: {
+      "image/*": [".png", ".jpeg", ".jpg"],
+      "application/pdf": [".pdf"],
+    },//accept only images
+    maxSize: 1024 * 1024 * 10, //10MBs
+  })
+
+
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -19,8 +64,26 @@ const ApplicationForm = () => {
     schedule: [],
     resume_by_email: '',
     resume: null,
+  });
+
+  const [Address, setAddress] = useState({
+    address1: '',
+    address2: ''
   })
 
+  const handleAddressChange = (event) => {
+    const { name, value, type, checked, index } = event.target
+
+    setAddress((prevData) => ({
+      ...prevData,
+      [name]:
+        type === 'checkbox'
+          ? checked
+            ? [...prevData[name], value]
+            : prevData[name].filter((item) => item !== value)
+          : value,
+    }))
+  }
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target
 
@@ -35,16 +98,21 @@ const ApplicationForm = () => {
     }))
   }
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0]
+  useEffect(() => {
     setFormData((prevData) => ({
       ...prevData,
-      resume: file,
+      resume: images,
     }))
-  }
+
+    // console.log(formData);
+  }, [images])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    setFormData(prevData => ({
+      ...prevData,
+      address: [Address.address1, Address.address2],
+    }))
     console.log('Form Values:', formData)
 
     try {
@@ -165,9 +233,10 @@ const ApplicationForm = () => {
               </label>
               <input
                 type="text"
-                name="address"
-                value={formData.address[0]}
-                onChange={handleChange}
+                name="address1"
+                index="0"
+                value={Address.address1}
+                onChange={handleAddressChange}
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Adresse"
               />
@@ -179,8 +248,9 @@ const ApplicationForm = () => {
               <input
                 type="text"
                 name="address2"
-                value={formData.address[1]}
-                onChange={handleChange}
+                index="1"
+                value={Address.address2}
+                onChange={handleAddressChange}
                 className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                 placeholder="Adresse 2"
               />
@@ -343,12 +413,21 @@ const ApplicationForm = () => {
               <label className="block text-gray-700 font-semibold mb-2">
                 Génial! déposez-le ici ⬇️ *
               </label>
-              <input
-                type="file"
-                name="file"
-                onChange={handleFileChange}
-                className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
-              />
+              <>
+                <div className='flex flex-col gap-3 border p-2 font-light rounded-lg shadow-md'>
+                  <div {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <p className={files.length? "": "text-gray-600/80"}>Drag 'n' drop your CV here, or click to select it</p>
+                  </div>
+                  <div className='flex flex-col gap-3 min-w-[100px]'>
+                    {files.map((fileWrapper, idx) => (
+                        fileWrapper.errors.length?
+                            <UploadError file={fileWrapper.file} errors={fileWrapper.errors} onDelete={onDelete} />:
+                            <SingleFileUpload onUpload={onUpload} onDelete={onDelete} key={idx} file={fileWrapper.file}/>
+                    ))}
+                  </div>
+                </div>
+              </>
             </div>
             <button
               type="submit"
