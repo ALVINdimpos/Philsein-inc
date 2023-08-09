@@ -119,7 +119,7 @@ const NavItem = ({ to, title }) => {
     <li className="text-white md:mx-4">
       <Link
         to={to}
-        smooth={true}
+        smooth={"true"}
         duration={500}
         onClick={() => setIsMenuOpen(false)}
       >
