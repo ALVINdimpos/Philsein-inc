@@ -1,21 +1,23 @@
 // Import the required components and CSS files
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import Slider from 'react-slick'
-import SlidingCard from './SlidingCard'
-import '../../assets/Style/slider-carousel.css'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+import SlidingCard from './SlidingCard';
+import '../../assets/Style/slider-carousel.css';
 
 const SliderCarousel = () => {
   const data = [
     {
       id: 1,
-      title: 'Physiothérapeute',
-      salary: "À partir de 65$ de l'heure",
+      title: 'Infirmière',
+      salary: "À partir de 53$ de l'heure",
       location:
-        "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec",
-      schedule: 'Temps plein⚫ Jour & soir',
-      workingCondition: 'Postes à long terme ⚫ 35h semaines',
-      link: 'job-physiotherapist',
+        "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec.",
+      schedule:
+        "Flexibles; possibilité de moduler l'horaire selon ses disponibilités.",
+      workingCondition:
+        'Remplacement ponctuel, court, moyen et long terme à travers le Québec',
+      link: 'job-nurse',
     },
     {
       id: 2,
@@ -31,6 +33,26 @@ const SliderCarousel = () => {
     },
     {
       id: 3,
+      title: 'Préposé(e) aux bénéficiaires',
+      salary: "À partir de 36$ de l'heure",
+      location:
+        "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec",
+      schedule: 'Flexible. Possibilité de moduler son horaire selon ses disponibilités',
+      workingCondition: 'Postes disponibles partout à travers le Québec.',
+      link: 'job-physiotherapist',
+    },
+    {
+      id: 4,
+      title: 'Physiothérapeute',
+      salary: "À partir de 65$ de l'heure",
+      location:
+        "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec",
+      schedule: 'Temps plein⚫ Jour & soir',
+      workingCondition: 'Postes à long terme ⚫ 35h semaines',
+      link: 'job-physiotherapist',
+    },
+    {
+      id: 5,
       title: 'Travailleur social',
       salary: "À partir de 60$ de l'heure",
       location:
@@ -39,25 +61,14 @@ const SliderCarousel = () => {
       workingCondition: 'Postes à long terme. 35h semaines',
       link: 'job-social-worker',
     },
-    {
-      id: 4,
-      title: 'Infirmière',
-      salary: "À partir de 53$ de l'heure",
-      location:
-        "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec.",
-      schedule:
-        "Flexibles; possibilité de moduler l'horaire selon ses disponibilités.",
-      workingCondition:
-        'Remplacement ponctuel, court, moyen et long terme à travers le Québec',
-      link: 'job-nurse',
-    },
   ]
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Display 3 cards in one row
+    slidesToShow: 3,
+    autoplay: true,
     slidesToScroll: 1,
     responsive: [
       {

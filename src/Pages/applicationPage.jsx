@@ -67,7 +67,7 @@ const ApplicationForm = () => {
     app.append("resume", imgFile);
 
     try {
-      const response = await axios.post('http://localhost:3000/apply', app)
+      const response = await axios.post('https://cautious-erin-pig.cyclic.app/apply', app)
       console.log('API Response:', response.data)
       // You can handle the API response here
     } catch (error) {

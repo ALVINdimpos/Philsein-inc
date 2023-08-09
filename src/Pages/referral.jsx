@@ -4,7 +4,8 @@ import '../assets/Style/Referral.css'
 import Footer from '../Layouts/Footer/index'
 import HEADER from '../Layouts/Header/index'
 import { ToastContainer, toast } from 'react-toastify'
-
+import Loading from '../Components/Loading/Index';
+import { useNavigate } from 'react-router'
 const ReferralProgram = () => {
   const [formData1, setFormData1] = useState({
     first_name: '',
@@ -23,6 +24,8 @@ const ReferralProgram = () => {
   })
 
   const [showSecondForm, setShowSecondForm] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate()
 
   const handleChange1 = (event) => {
     const { name, value } = event.target
@@ -52,6 +55,7 @@ const ReferralProgram = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    setIsLoading(true)
     const mergedFormData = {
       referer: formData1,
       referee: formData2,
@@ -59,16 +63,19 @@ const ReferralProgram = () => {
     console.log(formData1, formData2)
     try {
       const response = await axios.post(
-        'http://localhost:3000/refer',
+        'https://cautious-erin-pig.cyclic.app/refer',
         mergedFormData
       )
       toast.success('Votre message a été envoyé avec succès')
+      setIsLoading(false) // Clear the form fields
+
       // reload window
       setTimeout(() => {
-        window.location.reload()
+        navigate('/')
       }, 3000)
     } catch (error) {
       console.error('Error:', error)
+      setIsLoading(false)
       // Handle errors here if any
     }
   }
@@ -121,7 +128,7 @@ const ReferralProgram = () => {
                   {formData1.relationship_with_referer_with_referer ===
                     'no' && (
                     <p className="text-red-500 mt-2">
-                      Il faut être un employé du Groupe ADR pour profiter de
+                      Il faut être un employé du Philsein inc pour profiter de
                       notre programme de référencement!
                     </p>
                   )}
@@ -187,7 +194,8 @@ const ReferralProgram = () => {
                   type="submit"
                   className="btn block w-full py-4 px-6  text-white font-bold text-xl rounded cursor-pointer"
                 >
-                  Prochaine page
+                   {isLoading ? <Loading size="5" color='black' /> : 'Prochaine page'}
+                  
                 </button>
               </div>
             </form>
@@ -303,7 +311,8 @@ const ReferralProgram = () => {
                   type="submit"
                   className="btn block w-full py-4 px-6  text-white font-bold text-xl rounded cursor-pointer"
                 >
-                  Soumettre
+                    {isLoading ? <Loading size="5" color='black' /> : 'Soumettre'}
+      
                 </button>
               </div>
             </form>

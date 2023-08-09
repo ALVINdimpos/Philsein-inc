@@ -32,7 +32,7 @@ const JobNurse = () => {
               soins pour vos patients.
             </p>
             <p>
-              Finalement, au Groupe ADR, vous aurez également la chance
+              Finalement, au Philsein inc, vous aurez également la chance
               d’occuper un poste d’Assistant(e) supérieur immédiat (ASI), ou de
               coordonnatrice des soins, selon votre expérience et formation.
             </p>
@@ -152,7 +152,7 @@ const JobNurse = () => {
               ainsi que la maîtrise des protocoles de soins et des processus de
               documentation.
             </p>
-            <p>
+            <p  className='mb-5'>
               Finalement, en tant qu'infirmière chez notre agence de placement,
               vous devrez être capable de vous adapter à des environnements de
               soins différents.

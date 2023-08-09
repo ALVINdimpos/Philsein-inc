@@ -4,6 +4,7 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa'
 import Footer from '../Layouts/Footer/index'
 import HEADER from '../Layouts/Header/index'
 import { ToastContainer, toast } from 'react-toastify'
+import Loading from '../Components/Loading/Index'
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +13,13 @@ const ContactUs = () => {
     email: '',
     message: '',
   })
+  const [isLoading, setIsLoading] = useState(false)
   const handleSubmit = async (event) => {
+    setIsLoading(true)
     event.preventDefault()
     try {
       const response = await axios.post(
-        'http://localhost:3000/contact',
+        'https://cautious-erin-pig.cyclic.app/contact',
         formData
       )
       console.log('API Response:', response.data)
@@ -27,6 +30,8 @@ const ContactUs = () => {
       }, 3000)
     } catch (error) {
       console.error('Error:', error)
+      setIsLoading(false)
+      toast.error('Une erreur est survenue')
       // Handle errors here if any
     }
   }
@@ -67,7 +72,7 @@ const ContactUs = () => {
               <h2 className="text-xl font-bold mb-2">Email</h2>
               <p className="flex items-center">
                 <FaEnvelope className="mr-2 text-purple-600" />
-                info@example.com
+                info@philsein.com
               </p>
             </div>
           </div>
@@ -129,7 +134,8 @@ const ContactUs = () => {
                 type="submit"
                 className="btn-submit w-full py-2 rounded-lg text-white font-bold bg-gradient-to-r from-cyan-300 to-cyan-700 hover:opacity-90 transition-colors duration-300"
               >
-                Submit
+                 {isLoading ? <Loading size="5" color='black' /> : 'Submit'}
+                
               </button>
             </form>
           </div>

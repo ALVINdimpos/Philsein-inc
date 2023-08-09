@@ -1,4 +1,4 @@
-import MissionP from '../../../assets/Images/Group 129.svg'
+import MissionP from '../../../assets/Images/Group 129 (1).png'
 import './style.css'
 const Mission = () => {
   return (

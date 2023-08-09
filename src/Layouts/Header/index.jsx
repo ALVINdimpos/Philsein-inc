@@ -1,19 +1,29 @@
-import { useState } from 'react'
-import logo from '../../assets/Images/logo.svg'
-import { RiArrowDropDownLine } from 'react-icons/ri'
-import { Link } from 'react-router-dom'
-import './style.css'
+import { useState } from 'react';
+import logo from '../../assets/Images/logo.svg';
+import { RiArrowDropDownLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import './style.css';
 
 const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isEmploisMenuOpen, setIsEmploisMenuOpen] = useState(false);
+  const [isAProposMenuOpen, setIsAProposMenuOpen] = useState(false);
 
-  const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  const handleMobileMenuClick = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleEmploisMenuClick = () => {
+    setIsEmploisMenuOpen(!isEmploisMenuOpen);
+  };
+
+  const handleAProposMenuClick = () => {
+    setIsAProposMenuOpen(!isAProposMenuOpen);
+  };
 
   return (
     <header className="header">
-      <nav className="bg-gradient-to-r from-cyan to-blue p-4 md:p-6 flex items-center justify-between">
+      <nav className="bg-gradient-to-r from-cyan to-blue p-4 md:p-6 flex flex-col md:flex-row items-center justify-between">
         <div className="navbar-logo">
           <Link to="/">
             <img src={logo} alt="Logo" className="h-12" />
@@ -21,15 +31,15 @@ const Navigation = () => {
         </div>
 
         <button
-          onClick={handleMenuClick}
-          className="md:hidden text-white focus:outline-none"
+          onClick={handleMobileMenuClick}
+          className="md:hidden text-black focus:outline-none"
         >
           <svg
             className="h-6 w-6 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
-            {isMenuOpen ? (
+            {isMobileMenuOpen ? (
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -45,88 +55,80 @@ const Navigation = () => {
           </svg>
         </button>
 
-        <ul
-          className={`${
-            isMenuOpen ? 'block' : 'hidden'
-          } md:flex md:items-center md:w-auto`}
-        >
-          <NavItem to="/jobs" title="Offres d'emplois courantes" />
-          <NavItem to="/referral" title="Programme de référence" />
+        <div className={`md:flex ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+          <ul className="md:flex md:items-center md:w-auto">
+            <NavItem to="/jobs" title="Offres d'emplois courantes" />
+            <NavItem to="/referral" title="Programme de référence" />
 
-          <li className="relative inline-block bg-gradient-to-r from-cyan to-blue md:mx-4">
-            <span onClick={handleMenuClick} className="cursor-pointer">
-              Emplois et salaires
-              <RiArrowDropDownLine className="inline-block ml-1" />
-            </span>
-            <ul
-              className={`${
-                isMenuOpen ? 'block' : 'hidden'
-              } md:absolute md:right-0 mt-2 bg-blue-500 text-white p-2 rounded-md`}
-            >
-              <NavItem to="/jobs" title="Tous nos emplois disponibles" />
-              <NavItem to="/featured-jobs" title="Emplois en vedette" />
-              <NavItem to="/job-nurse" title="Infirmière" />
-              <NavItem
-                to="/job-nurse-auxiliary"
-                title="Infirmière auxiliaire"
-              />
-              <NavItem to="/job-physiotherapist" title="Physiothérapeute" />
-              <NavItem to="/job-social-worker" title="Travailleur social" />
-              <NavItem
-                to="/job-occupational-therapist"
-                title="Ergothérapeute"
-              />
-              <NavItem to="/job-inhalotherapist" title="Inhalothérapeute" />
-              <NavItem
-                to="/job-respiratory-therapist"
-                title="Thérapeute respiratoire"
-              />
-            </ul>
-          </li>
+            <li className="relative inline-block bg-gradient-to-r from-cyan to-blue md:mx-4">
+              <span onClick={handleEmploisMenuClick} className="cursor-pointer">
+                Emplois et salaires
+                <RiArrowDropDownLine className="inline-block ml-1" />
+              </span>
+              <ul
+                className={`${
+                  isEmploisMenuOpen ? 'block' : 'hidden'
+                } md:absolute md:right-0 mt-2 bg-cyan-500 text-white p-2 rounded-md`}
+              >
+                <NavItem to="/jobs" title="Tous nos emplois disponibles" />
+                <NavItem to="/job-nurse" title="Infirmière" />
+                <NavItem
+                  to="/job-nurse-auxiliary"
+                  title="Infirmière auxiliaire"
+                />
+                <NavItem to="/job-physiotherapist" title="Physiothérapeute" />
+                <NavItem to="/job-social-worker" title="Travailleur social" />
+                <NavItem
+                  to="/job-occupational-therapist"
+                  title="Ergothérapeute"
+                />
+                <NavItem to="/job-inhalotherapist" title="Inhalothérapeute" />
+                <NavItem
+                  to="/job-respiratory-therapist"
+                  title="Thérapeute respiratoire"
+                />
+              </ul>
+            </li>
 
-          <li className="relative inline-block bg-gradient-to-r from-cyan to-blue md:mx-4">
-            <span onClick={handleMenuClick} className="cursor-pointer">
-              À propos
-              <RiArrowDropDownLine className="inline-block ml-1" />
-            </span>
-            <ul
-              className={`${
-                isMenuOpen ? 'block' : 'hidden'
-              } md:absolute md:right-0 mt-2 bg-blue-500 text-white p-2 rounded-md`}
-            >
-              <NavItem to="/history" title="Histoire" />
-              <NavItem to="/advantages" title="Avantages" />
-              <NavItem to="/faq" title="FAQ" />
-            </ul>
-          </li>
+            <li className="relative inline-block bg-gradient-to-r from-cyan to-blue md:mx-4">
+              <span onClick={handleAProposMenuClick} className="cursor-pointer">
+                À propos
+                <RiArrowDropDownLine className="inline-block ml-1" />
+              </span>
+              <ul
+                className={`${
+                  isAProposMenuOpen ? 'block' : 'hidden'
+                } md:absolute md:right-0 mt-2 bg-cyan-500 text-white p-2 rounded-md`}
+              >
+                <NavItem to="/history" title="Histoire" />
+                <NavItem to="/advantages" title="Avantages" />
+                <NavItem to="/faq" title="FAQ" />
+              </ul>
+            </li>
+            <NavItem to="/recruitment" title="Autre domaines" />
+            <NavItem to="/application" title="Application rapide" />
+            <NavItem to="/contact" title="Contact" />
+          </ul>
 
-          <NavItem to="/application" title="Application rapide" />
-          <NavItem to="/contact" title="Contact" />
-        </ul>
-
-        <div className="md:block mt-4 md:mt-0">
-          <Link to="/login" className="custom-button">
-            Connexion
-          </Link>
+          <div className="md:block mt-4 md:mt-0">
+            <Link to="/login" className="custom-button">
+              Connexion
+            </Link>
+          </div>
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-const NavItem = ({ to, title }) => {
+const NavItem = ({ to, title, onClick }) => {
   return (
     <li className="text-white md:mx-4">
-      <Link
-        to={to}
-        smooth={"true"}
-        duration={500}
-        onClick={() => setIsMenuOpen(false)}
-      >
+      <Link to={to} smooth="true" duration={500} onClick={onClick}>
         {title}
       </Link>
     </li>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
