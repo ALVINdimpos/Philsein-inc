@@ -1,34 +1,34 @@
 // utils/dateUtils.js
 export function formatDate(value) {
-  const numbers = value.slice(0,10).split("-");
+  const numbers = value.slice(0, 10).split('-')
   const mapToMonths = {
-    "Jan": 'JANUARY',
-    "Feb": 'FEBRUARY',
-    "Mar": 'MARCH',
-    "Apr": 'APRIL',
-    "May": 'MAY',
-    "Jun": 'JUNE',
-    "Jul": 'JULY',
-    "Aug": 'AUGUST',
-    "Sep": 'SEPTEMBER',
-    "Oct": 'OCTOBER',
-    "Nov": 'NOVEMBER',
-    "Dec": 'DECEMBER',
-    "01": "Jan",
-    "02": "Feb",
-    "03": "Mar",
-    "04": "Apr",
-    "05": "May",
-    "06": "Jun",
-    "07": "Jul",
-    "08": "Aug",
-    "09": "Sep",
-    "10": "Oct",
-    "11": "Nov",
-    "12": "Dec"
-};
+    Jan: 'JANUARY',
+    Feb: 'FEBRUARY',
+    Mar: 'MARCH',
+    Apr: 'APRIL',
+    May: 'MAY',
+    Jun: 'JUNE',
+    Jul: 'JULY',
+    Aug: 'AUGUST',
+    Sep: 'SEPTEMBER',
+    Oct: 'OCTOBER',
+    Nov: 'NOVEMBER',
+    Dec: 'DECEMBER',
+    '01': 'Jan',
+    '02': 'Feb',
+    '03': 'Mar',
+    '04': 'Apr',
+    '05': 'May',
+    '06': 'Jun',
+    '07': 'Jul',
+    '08': 'Aug',
+    '09': 'Sep',
+    10: 'Oct',
+    11: 'Nov',
+    12: 'Dec',
+  }
 
-  return `${mapToMonths[numbers[1]]} ${numbers[2]}, ${numbers[0]}`;
+  return `${mapToMonths[numbers[1]]} ${numbers[2]}, ${numbers[0]}`
 }
 
 export function getTimezoneOffset(date) {

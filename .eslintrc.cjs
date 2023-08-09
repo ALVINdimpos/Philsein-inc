@@ -46,6 +46,7 @@ module.exports = {
         'import/no-deprecated': 'off',
         'import/no-extraneous-dependencies': 'off',
         'import/no-mutable-exports': 'off',
+        'no-unused-vars': 'off',
 
   },
 }
