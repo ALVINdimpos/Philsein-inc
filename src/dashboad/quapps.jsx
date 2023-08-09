@@ -17,7 +17,7 @@ export default function Quapps() {
         },
       }
       const res = await (
-        await fetch('http://localhost:3000/apps', config)
+        await fetch('https://cautious-erin-pig.cyclic.app/apps', config)
       ).json()
       setApps((_) => res.data)
       const uRead = res.data.filter((item) => item.readStatus == false)
@@ -40,7 +40,7 @@ export default function Quapps() {
       },
     }
     const res = await (
-      await fetch(`http://localhost:3000/apps/${deleteApp}`, {
+      await fetch(`https://cautious-erin-pig.cyclic.app/apps/${deleteApp}`, {
         method: 'DELETE',
         ...config,
       })

@@ -6,11 +6,17 @@
   --primary-color: #2dbfc5;
   --secondary-color: #129fc6;
   --accent-color: #106293;
-  font-family: Poppins;
+ 
+
 }
 body {
   margin: 0;
   min-height: 100vh;
+  font-family: 'Open Sans', sans-serif !important;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 /* Example usage of the colors */
 
@@ -28,4 +34,7 @@ a {
 }
 a:hover {
   color: var(--primary-color) !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif !important;
 }

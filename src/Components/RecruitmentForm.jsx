@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import Cards from '../Components/Card/index'
 import '../assets/Style/Recruitment.css'
+import Loading from '../Components/Loading/Index';
 import { ToastContainer, toast } from 'react-toastify'
 
 const RecruitmentForm = () => {
@@ -16,7 +17,7 @@ const RecruitmentForm = () => {
     city: '',
     province: '',
   })
-
+  const [isLoading, setIsLoading] = useState(false)
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prevData) => ({
@@ -27,10 +28,12 @@ const RecruitmentForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setIsLoading(true)
     try {
-      const response = await axios.post('http://localhost:3000/staff', formData)
+      const response = await axios.post('https://cautious-erin-pig.cyclic.app/staff', formData)
       console.log('API Response:', response.data)
       toast.success('Votre message a été envoyé avec succès')
+      setIsLoading(false) // Clear the form fields
       setFormData({
         want_to_hire: '',
         first_name: '',
@@ -44,6 +47,7 @@ const RecruitmentForm = () => {
       }) // Clear the form fields
     } catch (error) {
       console.error('Error:', error)
+      setIsLoading(false)
       // Handle errors here if any
     }
   }
@@ -211,7 +215,8 @@ const RecruitmentForm = () => {
             type="submit"
             className="button max-w-sm mx-auto bg-gradient-to-r from-cyan-400 to-cyan-700 rounded-lg p-4"
           >
-            OBTENIR DU PERSONNEL QUALIFIÉ DÈS MAINTENANT
+            
+            {isLoading ? <Loading size="5" color='black' /> : 'OBTENIR DU PERSONNEL QUALIFIÉ DÈS MAINTENANT'}
           </button>
         </form>
         <ToastContainer />

@@ -141,7 +141,7 @@ const JobNurseAuxiliary = () => {
               (OIIAQ) et détenir un permis valide depuis au moins 6 mois
             </p>
             <p>Avoir une certification de RCR valide</p>
-            <p>Bonne maîtrise du français tant à l’oral qu’à l’écrit</p>
+            <p className='mb-5'>Bonne maîtrise du français tant à l’oral qu’à l’écrit</p>
             <Link
               to="/application"
               className="btn text-white px-4 py-2 mt-4 rounded-lg"

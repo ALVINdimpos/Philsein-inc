@@ -59,7 +59,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p>©2023 Alvin Coder | All Rights Reserved</p>
+      <p>©2023 Philsein inc| All Rights Reserved</p>
     </footer>
   )
 }
