@@ -62,12 +62,12 @@ const RecruitmentForm = () => {
 
   return (
     <div className="container mx-auto py-6 flex flex-col md:flex-row items-center justify-between">
-      <div className="w-full max-w-md mb-4 md:mb-0">
+      <div className="w-full max-w-md mb-4 md:mb-0 ">
         <h2 className="text-2xl font-bold text-center mb-4">
           Remplissez le formulaire pour obtenir le personnel dont vous avez
           besoin !
         </h2>
-        <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
+        <form onSubmit={handleSubmit} className=" bg-white p-8 rounded-lg shadow-md max-w-lg mx-auto" >
           <div className="mb-2">
             <label htmlFor="first_name" className="block font-semibold mb-1">
               Je veux embaucher
