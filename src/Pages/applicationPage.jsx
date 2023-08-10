@@ -1,9 +1,14 @@
 import Footer from '../Layouts/Footer/index'
 import HEADER from '../Layouts/Header/index'
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify'
+import Loading from '../Components/Loading/Index'
+import { useNavigate } from 'react-router'
 import { useState } from 'react'
 
 const ApplicationForm = () => {
+
+  const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -15,28 +20,40 @@ const ApplicationForm = () => {
     postal_code: '',
     work_permit: '',
     position: '',
+    resume: '',
     regions: [],
     schedule: [],
     resume_by_email: ''
   })
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
-    const { name, value, type, checked } = event.target
-    let Address = []
-    if (name == "address1") {
-      Address = formData.address
-      Address[0] = value
-      setFormData((prevData) => ({...prevData, address: Address}))
-      return 1
+    const { name, value, type, checked } = event.target;
+    let Address = [];
+
+    if (name === 'address1') {
+      Address = formData.address;
+      Address[0] = value;
+      setFormData((prevData) => ({ ...prevData, address: Address }));
+      return;
     }
 
-    if (name == "address2") {
-      Address = formData.address
-      Address[1] = value
-      setFormData((prevData) => ({...prevData, address: Address}))
-      return 1
+    if (name === 'address2') {
+      Address = formData.address;
+      Address[1] = value;
+      setFormData((prevData) => ({ ...prevData, address: Address }));
+      return;
     }
 
+    if (name === 'resume') { // Handle the resume input
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+      return;
+    }
+
+    // Handle other input fields
     setFormData((prevData) => ({
       ...prevData,
       [name]:
@@ -45,36 +62,30 @@ const ApplicationForm = () => {
             ? [...prevData[name], value]
             : prevData[name].filter((item) => item !== value)
           : value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    console.log('Form Values:', formData);
-    const image = document.getElementById('resume');
-
-    if(!image.files.length && formData.resume_by_email === "true"){
-      alert("Missing Resume")
-      return 0
-    }
-    let imgFile = image.files[0]
-
-    let app = new FormData();
-    for ( var key in formData ) {
-        app.append(key, formData[key]);
-    }
-
-    app.append("resume", imgFile);
+    setIsLoading(true);
+    event.preventDefault();
+    console.log('Form Values:', formData); // Log the formData to see if resume is populated
 
     try {
-      const response = await axios.post('https://cautious-erin-pig.cyclic.app/apply', app)
-      console.log('API Response:', response.data)
-      // You can handle the API response here
+      const response = await axios.post('https://cautious-erin-pig.cyclic.app/apply', formData);
+      console.log('API Response:', response.data);
+      toast.success('Votre candidature a été envoyée avec succès');
+    
+   // reload window
+   setTimeout(() => {
+    navigate("/")
+  }, 3000)
+      // Handle the API response here
     } catch (error) {
-      console.error('Error:', error)
+      console.error('Error:', error);
       // Handle errors here if any
+      toast.error('Une erreur est survenue');
     }
-  }
+  };
 
   const regions = [
     'Gaspésie',
@@ -116,6 +127,7 @@ const ApplicationForm = () => {
   return (
     <>
       <HEADER />
+      <ToastContainer />
       <div className="bg-gradient-to-b from-cyan-400 to-blue-700 min-h-screen flex flex-col items-center justify-center py-10">
         <div className="bg-white rounded-lg p-8 max-w-xl w-full">
           <h2 className="text-center text-3xl font-bold mb-4">
@@ -281,7 +293,7 @@ const ApplicationForm = () => {
                 name="position"
                 value={formData.position}
                 onChange={handleChange}
-                className="form-select w-full h-10"
+                className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
               >
                 <option value="">Choisissez un poste</option>
                 {jobs.map((job) => (
@@ -362,15 +374,23 @@ const ApplicationForm = () => {
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
-                Génial! déposez-le ici ⬇️ *
+              Génial! Entrez l'URL du CV ici ⬇️ *
               </label>
-              <input type="file" accept='application/pdf' name="resume" id="resume" />
+              <input
+            type="url"
+            name="resume"
+            id="resume" // Make sure this ID is unique within your document
+            value={formData.resume} // Bind the value to formData.resume
+            onChange={handleChange}
+            className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
+          />
             </div>
             <button
               type="submit"
               className="btn-submit w-full py-3 rounded-lg text-white font-bold bg-gradient-to-r from-cyan-400 to-blue-700 hover:opacity-90 transition-colors duration-300"
             >
-              Soumettre
+               {isLoading ? <Loading size="5" color='black' /> : 'Soumettre'}
+              
             </button>
           </form>
         </div>
