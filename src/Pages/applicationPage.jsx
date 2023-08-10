@@ -123,6 +123,7 @@ const ApplicationForm = () => {
     'Inhalothérapeute',
     'Ergothérapeute',
     'Adjoint(e) à la répartition',
+    'Préposé(e) aux bénéficiaires'
   ]
   return (
     <>
