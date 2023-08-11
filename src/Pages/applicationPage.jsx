@@ -23,7 +23,7 @@ const ApplicationForm = () => {
     resume: '',
     regions: [],
     schedule: [],
-    resume_by_email: ''
+    resume_by_email: 'true'
   })
   const navigate = useNavigate()
 
@@ -123,12 +123,13 @@ const ApplicationForm = () => {
     'Inhalothérapeute',
     'Ergothérapeute',
     'Adjoint(e) à la répartition',
+   'Préposé(e) aux bénéficiaires'
   ]
   return (
     <>
       <HEADER />
       <ToastContainer />
-      <div className="bg-gradient-to-b from-cyan-400 to-blue-700 min-h-screen flex flex-col items-center justify-center py-10">
+      <div className="bg-gradient-to-b from-cyan-400 to-blue-200 min-h-screen flex flex-col items-center justify-center py-10">
         <div className="bg-white rounded-lg p-8 max-w-xl w-full">
           <h2 className="text-center text-3xl font-bold mb-4">
             Rejoignez l’équipe !
@@ -347,8 +348,9 @@ const ApplicationForm = () => {
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
-                Avez-vous votre CV sur votre appareil actuel ?
+              Veuillez envoyer votre CV par courriel à info@philsein.com.
               </label>
+              <div className='hidden'>
               <div className="flex items-center">
                 <input
                   type="radio"
@@ -371,8 +373,9 @@ const ApplicationForm = () => {
                 />
                 <label className="ml-2 block text-gray-700">Non</label>
               </div>
+              </div>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 hidden">
               <label className="block text-gray-700 font-semibold mb-2">
               Génial! Entrez l'URL du CV ici ⬇️ *
               </label>
@@ -382,7 +385,7 @@ const ApplicationForm = () => {
             id="resume" // Make sure this ID is unique within your document
             value={formData.resume} // Bind the value to formData.resume
             onChange={handleChange}
-            className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
+            className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500  "
           />
             </div>
             <button
