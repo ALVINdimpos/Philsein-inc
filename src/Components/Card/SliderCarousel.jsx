@@ -39,7 +39,7 @@ const SliderCarousel = () => {
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec",
       schedule: 'Flexible. Possibilité de moduler son horaire selon ses disponibilités',
       workingCondition: 'Postes disponibles partout à travers le Québec.',
-      link: 'job-physiotherapist',
+      link: 'job-prepose-aux-beneficiaires',
     },
     {
       id: 4,

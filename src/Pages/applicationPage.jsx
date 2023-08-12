@@ -348,7 +348,7 @@ const ApplicationForm = () => {
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
-              Veuillez envoyer votre CV par courriel à info@philsein.com.
+              Veuillez envoyer votre CV par courriel à info@philsein.com
               </label>
               <div className='hidden'>
               <div className="flex items-center">
