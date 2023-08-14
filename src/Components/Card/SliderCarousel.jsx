@@ -47,8 +47,8 @@ const SliderCarousel = () => {
       salary: "À partir de 65$ de l'heure",
       location:
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec",
-      schedule: 'Temps plein⚫ Jour & soir',
-      workingCondition: 'Postes à long terme ⚫ 35h semaines',
+      schedule: 'Temps plein Jour & soir',
+      workingCondition: 'Postes à long terme  35h semaines',
       link: 'job-physiotherapist',
     },
     {
@@ -57,7 +57,7 @@ const SliderCarousel = () => {
       salary: "À partir de 60$ de l'heure",
       location:
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec.",
-      schedule: 'Temps plein⚫ Jour & soir',
+      schedule: 'Temps plein Jour & soir',
       workingCondition: 'Postes à long terme. 35h semaines',
       link: 'job-social-worker',
     },

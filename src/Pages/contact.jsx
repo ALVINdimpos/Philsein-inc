@@ -64,7 +64,7 @@ const ContactUs = () => {
               <h2 className="text-xl font-bold mb-2">Phone</h2>
               <p className="flex items-center">
                 <FaPhone className="mr-2 text-purple-600" />
-                +1 5145746455
+               +1 819-969-1716
               </p>
             </div>
 
@@ -106,7 +106,7 @@ const ContactUs = () => {
               </div>
               <div className="mb-4">
                 <label htmlFor="email" className="block font-semibold mb-1">
-                  Courrie *
+                Adress courriel *
                 </label>
                 <input
                   type="email"
@@ -134,7 +134,7 @@ const ContactUs = () => {
                 type="submit"
                 className="btn-submit w-full py-2 rounded-lg text-white font-bold bg-gradient-to-r from-cyan-300 to-cyan-700 hover:opacity-90 transition-colors duration-300"
               >
-                 {isLoading ? <Loading size="5" color='black' /> : 'Submit'}
+                 {isLoading ? <Loading size="5" color='black'/> :'Soumettre'}
                 
               </button>
             </form>

@@ -110,6 +110,7 @@ const ReferralProgram = () => {
                       name="relationship_with_referer_with_referer"
                       className="form-radio h-5 w-5 text-blue-500"
                       value="yes"
+                      style={{ color: 'black' }}
                       onChange={handleChange1}
                     />
                     <span className="ml-2 text-black">Oui</span>
@@ -120,6 +121,7 @@ const ReferralProgram = () => {
                       name="relationship_with_referer_with_referer"
                       className="form-radio h-5 w-5 text-blue-500"
                       value="no"
+                      style={{ color: 'black' }}
                       onChange={handleChange1}
                     />
                     <span className="ml-2 text-black">Non</span>
@@ -145,6 +147,7 @@ const ReferralProgram = () => {
                     className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                     placeholder="Prénom"
                     name="first_name"
+                    style={{ color: 'black' }}
                     onChange={handleChange1}
                   />
                 </div>
@@ -157,6 +160,7 @@ const ReferralProgram = () => {
                     className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                     placeholder="Nom"
                     name="last_name"
+                    style={{ color: 'black' }}
                     onChange={handleChange1}
                   />
                 </div>
@@ -172,6 +176,7 @@ const ReferralProgram = () => {
                     className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                     placeholder="exemple@exemple.com"
                     name="email"
+                    style={{ color: 'black' }}
                     onChange={handleChange1}
                   />
                 </div>
@@ -184,6 +189,7 @@ const ReferralProgram = () => {
                     className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                     placeholder="(000) 000-0000"
                     name="phone"
+                    style={{ color: 'black' }}
                     onChange={handleChange1}
                   />
                 </div>
@@ -219,6 +225,7 @@ const ReferralProgram = () => {
                     className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                     placeholder="Prénom"
                     name="first_name"
+                    style={{ color: 'black' }}
                     onChange={handleChange2}
                   />
                 </div>
@@ -231,6 +238,7 @@ const ReferralProgram = () => {
                     className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                     placeholder="Nom"
                     name="last_name"
+                    style={{ color: 'black' }}
                     onChange={handleChange2}
                   />
                 </div>
@@ -245,6 +253,7 @@ const ReferralProgram = () => {
                     className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                     placeholder="exemple@exemple.com"
                     name="email"
+                    style={{ color: 'black' }}
                     onChange={handleChange2}
                   />
                 </div>
@@ -257,6 +266,7 @@ const ReferralProgram = () => {
                     className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                     placeholder="(000) 000-0000"
                     name="phone"
+                    style={{ color: 'black' }}
                     onChange={handleChange2}
                   />
                 </div>
@@ -274,6 +284,7 @@ const ReferralProgram = () => {
                           name="position"
                           className="form-radio h-4 w-4 text-blue-500"
                           value={option}
+                          style={{ color: 'black' }}
                           onChange={handleChange2}
                         />
                         <span className="ml-2 text-black">{option}</span>
@@ -300,7 +311,7 @@ const ReferralProgram = () => {
               </div>
 
 
-              <div className="text-center">
+              <div className=" flex justify-between gap-3 text-center ">
                 <button
                   type="submit"
                   className="btn block w-full py-4 px-6  text-white font-bold text-xl rounded cursor-pointer"

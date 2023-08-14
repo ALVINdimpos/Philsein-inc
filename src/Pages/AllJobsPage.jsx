@@ -4,17 +4,24 @@ import HEADER from '../Layouts/Header/index'
 const jobsData = [
   {
     title: 'Infirmier(ère)',
-    rate: "À partir de 80$ de l'heure",
+    rate: "À partir de 70$ de l'heure",
     description:
       'Postes disponibles partout à travers le Québec.\n\nFlexibles. Possibilité de moduler son horaire selon ses disponibilités',
     link: '/job-nurse',
   },
   {
     title: 'Infirmier(ère) auxiliaire',
-    rate: "À partir de 65$ de l'heure",
+    rate: "À partir de 55$ de l'heure",
     description:
       'Postes disponibles partout à travers le Québec.\n\nFlexibles. Possibilité de moduler son horaire selon ses disponibilités',
     link: '/job-nurse-auxiliary',
+  },
+  {
+    title: 'Préposé(e) aux bénéficiaires',
+    rate: "À partir de 46$ de l'heure",
+    description:
+      'Postes disponibles partout à travers le Québec.\n\nFlexible. Possibilité de moduler son horaire selon ses disponibilités',
+    link: '/job-prepose-aux-beneficiaires',
   },
   {
     title: 'Ergothérapeute',
@@ -23,6 +30,7 @@ const jobsData = [
       'Postes disponibles partout à travers le Québec.\n\nHoraire temps plein. Quarts de jours ou de soir disponibles',
     link: '/job-occupational-therapist',
   },
+
   {
     title: 'Travailleur(euse) social(e)',
     rate: "À partir de 70$ de l'heure",
@@ -43,13 +51,6 @@ const jobsData = [
     description:
       'Postes disponibles partout à travers le Québec.\n\nHoraire temps plein. Quarts de jours ou de soir disponibles',
     link: '/job-inhalotherapist',
-  },
-  {
-    title: 'Préposé(e) aux bénéficiaires',
-    rate: "À partir de 46$ de l'heure",
-    description:
-      'Postes disponibles partout à travers le Québec.\n\nFlexible. Possibilité de moduler son horaire selon ses disponibilités',
-    link: '/job-prepose-aux-beneficiaires',
   },
   {
     title: 'Technicien(enne) en travail social',

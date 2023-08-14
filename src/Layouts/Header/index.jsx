@@ -68,7 +68,7 @@ const Navigation = () => {
               <ul
                 className={`${
                   isEmploisMenuOpen ? 'block' : 'hidden'
-                } md:absolute md:right-0 mt-2 bg-cyan-500 text-white p-2 rounded-md`}
+                } md:absolute md:right-0 mt-2 bg-cyan-500 text-white p-2 rounded-md hover:text-white`}
               >
                 <NavItem to="/jobs" title="Tous nos emplois disponibles" />
                 <NavItem to="/job-nurse" title="Infirmière" />
@@ -76,6 +76,7 @@ const Navigation = () => {
                   to="/job-nurse-auxiliary"
                   title="Infirmière auxiliaire"
                 />
+                <NavItem to="/job-prepose-aux-beneficiaires" title="Préposé(e) aux bénéficiaires" />
                 <NavItem to="/job-physiotherapist" title="Physiothérapeute" />
                 <NavItem to="/job-social-worker" title="Travailleur social" />
                 <NavItem
