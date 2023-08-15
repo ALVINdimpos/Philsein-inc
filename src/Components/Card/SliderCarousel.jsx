@@ -10,7 +10,7 @@ const SliderCarousel = () => {
     {
       id: 1,
       title: 'Infirmière',
-      salary: "À partir de 53$ de l'heure",
+      salary: "À partir de 70$ de l'heure",
       location:
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec.",
       schedule:
@@ -22,7 +22,7 @@ const SliderCarousel = () => {
     {
       id: 2,
       title: 'Infirmière auxiliaire',
-      salary: "À partir de 34$ de l'heure",
+      salary: "À partir de 55$ de l'heure",
       location:
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec.",
       schedule:
@@ -34,7 +34,7 @@ const SliderCarousel = () => {
     {
       id: 3,
       title: 'Préposé(e) aux bénéficiaires',
-      salary: "À partir de 36$ de l'heure",
+      salary: "À partir de 46$ de l'heure",
       location:
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec",
       schedule: 'Flexible. Possibilité de moduler son horaire selon ses disponibilités',
@@ -44,7 +44,7 @@ const SliderCarousel = () => {
     {
       id: 4,
       title: 'Physiothérapeute',
-      salary: "À partir de 65$ de l'heure",
+      salary: "À partir de 75$ de l'heure",
       location:
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec",
       schedule: 'Temps plein Jour & soir',
@@ -54,7 +54,7 @@ const SliderCarousel = () => {
     {
       id: 5,
       title: 'Travailleur social',
-      salary: "À partir de 60$ de l'heure",
+      salary: "À partir de 70$ de l'heure",
       location:
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec.",
       schedule: 'Temps plein Jour & soir',

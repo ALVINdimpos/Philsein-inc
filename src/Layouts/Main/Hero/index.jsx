@@ -37,7 +37,7 @@ const index = () => {
               <FaFacebookF />
             </a>
             <a
-              href="https://www.instagram.com/philseininc/"
+              href="https://www.instagram.com/Philsein_inc"
               target="_blank"
               className="social-icon"
               rel="noreferrer"

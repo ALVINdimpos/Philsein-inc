@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './style.css'
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
 
@@ -27,7 +28,7 @@ const Footer = () => {
           </a>
         </li>
         <li className="social-icons__item">
-          <a className="social-icons__link" href="#">
+          <a className="social-icons__link" href="https://www.instagram.com/Philsein_inc">
             <FaInstagram />
           </a>
         </li>
@@ -49,14 +50,9 @@ const Footer = () => {
           </a>
         </li>
         <li className="Menu__item">
-          <a className="Menu__link" href="#">
-            Blog
-          </a>
-        </li>
-        <li className="Menu__item">
-          <a className="Menu__link" href="#">
+          <Link to="/contact" className="Menu__link" >
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
       <p>©2023 Philsein inc| All Rights Reserved</p>
