@@ -45,7 +45,7 @@ const JobSocialWorker = () => {
             </ul>
           </div>
           <div className="p-4 bg-white rounded-lg shadow-md mt-8">
-            <p>À partir de 60$ de l'heure</p>
+            <p>À partir de 70$ de l'heure</p>
             <p>Postes disponibles partout à travers le Québec.</p>
             <p>Horaire temps plein. Quarts de jours ou de soir disponibles</p>
           </div>
@@ -54,12 +54,12 @@ const JobSocialWorker = () => {
             <h4 className="text-lg font-bold mb-2">Salaire</h4>
             <p>
               Pour le poste de travailleur ou travailleuse social, nos salaires
-              commencent à partir de 60$/h. Ceux-ci varient principalement en
+              commencent à partir de 70$/h. Ceux-ci varient principalement en
               fonction de la région d’emploi.
             </p>
             <p>
               En effet, dans les grands centres comme Montréal, nos salaires
-              sont de 60$/h.
+              sont de 70$/h.
             </p>
             <p>
               Cependant, en régions éloignées comme l’Abitibi et la Côte-Nord,

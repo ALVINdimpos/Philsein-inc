@@ -34,7 +34,7 @@ const JobNurseAuxiliary = () => {
               santé, de la rétablir et de prévenir la maladie, ainsi que de
               fournir des soins palliatifs.
             </p>
-            <p>À partir de 45$ de l'heure</p>
+            <p>À partir de 55$ de l'heure</p>
             <p>Postes disponibles partout à travers le Québec.</p>
             <p>
               Flexibles. Possibilité de moduler son horaire selon ses

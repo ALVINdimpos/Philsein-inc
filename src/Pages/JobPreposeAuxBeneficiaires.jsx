@@ -31,7 +31,7 @@ const JobPreposeAuxBeneficiaires = () => {
             </p>
           </div>
           <div className="p-4 bg-white rounded-lg shadow-md mt-8">
-            <p>À partir de 36$ de l'heure</p>
+            <p>À partir de 46$ de l'heure</p>
             <p>Postes disponibles partout à travers le Québec.</p>
             <p>
               Flexible. Possibilité de moduler son horaire selon ses
@@ -42,7 +42,7 @@ const JobPreposeAuxBeneficiaires = () => {
             <h3 className="text-xl font-bold mb-4">Conditions de travail</h3>
             <h4 className="text-lg font-bold mb-2">Salaire</h4>
             <p>
-              Le salaire pour se poste commence à partir de 36$ de l'heure. et
+              Le salaire pour se poste commence à partir de 46$ de l'heure. et
               varie principalement selon la région d’emploi.
             </p>
             <p>

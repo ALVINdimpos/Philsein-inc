@@ -41,7 +41,7 @@ const JobNurse = () => {
             <h3 className="text-xl font-bold mb-4">Conditions de travail</h3>
             <h4 className="text-lg font-bold mb-2">Salaire</h4>
             <p>
-              Le salaire pour ce poste commence à 53$ de l’heure et varie
+              Le salaire pour ce poste commence à 70$ de l’heure et varie
               principalement selon la région d’emploi.
             </p>
             <p>

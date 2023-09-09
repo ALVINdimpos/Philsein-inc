@@ -7,8 +7,6 @@ export default function Quapps() {
   const [apps, setApps] = useState([])
   const [unread, setUnread] = useState(0)
   const [read, setRead] = useState(0)
-  const [deleteApp, setDelete] = useState('')
-
   useEffect(() => {
     const getApps = async () => {
       const config = {
@@ -24,7 +22,6 @@ export default function Quapps() {
       const Read = res.data.filter((item) => item.readStatus == true)
       setRead((_) => Read?.length)
       setUnread((_) => uRead?.length)
-      // console.log(res.data)
     }
 
     getApps()

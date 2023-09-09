@@ -32,7 +32,7 @@ const JobTechnicienTravailSocial = () => {
             </p>
           </div>
           <div className="p-4 bg-white rounded-lg shadow-md mt-8">
-            <p>À partir de 50$ de l'heure</p>
+            <p>À partir de 60$ de l'heure</p>
             <p>Postes disponibles partout à travers le Québec.</p>
             <p>
               Flexibles. Possibilité de moduler son horaire selon ses
@@ -43,9 +43,9 @@ const JobTechnicienTravailSocial = () => {
             <h3 className="text-xl font-bold mb-4">Conditions de travail</h3>
             <h4 className="text-lg font-bold mb-2">Salaire</h4>
             <p>
-              Le taux horaire pour ce poste est de 50$ par heure et varie selon
+              Le taux horaire pour ce poste est de 60$ par heure et varie selon
               la région d’emploi. En effet, plus proche de la grande région de
-              Montréal, nos salaires se rapprochent de 50$ de l'heure, alors que
+              Montréal, nos salaires se rapprochent de 60$ de l'heure, alors que
               nos régions plus éloignées, le salaire se rapproche de 58$ de
               l’heure. De plus, en général, les taux payés pour des clients
               privés peuvent différer de ceux de nos clients du réseau public.

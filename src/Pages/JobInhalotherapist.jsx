@@ -47,7 +47,7 @@ const JobInhalotherapist = () => {
             </p>
             <p>
               Finalement, nos emplois d’inhalothérapeutes aux Laurentides
-              comprennent un salaire de 60$ de l’heure.
+              comprennent un salaire de 68$ de l’heure.
             </p>
             <h4 className="text-lg font-bold mt-2">Types d'horaires</h4>
             <p>

@@ -55,7 +55,7 @@ const JobPhysiotherapist = () => {
             </p>
             <p>
               Finalement, à Lanaudière et les Laurentides, nos offres d’emplois
-              pour physiothérapeute comprennent un salaire de 70$ de l’heure.
+              pour physiothérapeute comprennent un salaire de 75$ de l’heure.
             </p>
             <h4 className="text-lg font-bold mt-2">Types d'horaire</h4>
             <p>

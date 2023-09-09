@@ -1,9 +1,19 @@
 import logo from '../assets/Images/logo.svg'
-import {ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { FaServicestack } from 'react-icons/fa';
 
 const layout = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const menuClass = isOpen ? 'block' : 'hidden';
+
     return (
         <>
             <div>
@@ -43,6 +53,63 @@ const layout = (props) => {
                                         <svg fill="currentColor" className="w-6 h-6" version="1.1" id="XMLID_225_" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" enableBackground="new 0 0 24 24" xmlSpace="preserve"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="blog"> <g> <path d="M5,23c-2.2,0-4-1.8-4-4v-8h2v4.5C3.6,15.2,4.3,15,5,15c2.2,0,4,1.8,4,4S7.2,23,5,23z M5,17c-1.1,0-2,0.9-2,2s0.9,2,2,2 s2-0.9,2-2S6.1,17,5,17z M24,19h-2C22,9.6,14.4,2,5,2V0C15.5,0,24,8.5,24,19z M19,19h-2c0-6.6-5.4-12-12-12V5 C12.7,5,19,11.3,19,19z M14,19h-2c0-3.9-3.1-7-7-7v-2C10,10,14,14,14,19z"></path> </g> </g> </g></svg>
                                         <span>Blogs</span>
                                     </Link>
+                                    <Link to="" className="py-2.5 px-4 flex items-center space-x-2 text-white hover:text-white rounded">
+                                        <svg
+                                            fill="currentColor"
+                                            className="w-6 h-6"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-6.5c-.28 0-.5.22-.5.5V16a.5.5 0 0 0 1 0v-1.5c0-.28-.22-.5-.5-.5zm-4.65-3.85l.79-.79a.5.5 0 0 0 0-.71L9.29 6.21a.5.5 0 0 0-.71 0L7.79 7l2.79 2.79c.19.2.51.2.71 0zm8.85 0a.5.5 0 0 0 0-.71l-.79-.79-.79.79a.5.5 0 0 0 0 .71L16.21 12l-.79.79a.5.5 0 0 0 0 .71l.79.79.79-.79a.5.5 0 0 0 0-.71l-.79-.79zm-4.2-3.65l-2.79-2.79a.5.5 0 0 0-.71 0L7.21 9l-.79-.79a.5.5 0 0 0-.71 0L4.21 9l-.79.79a.5.5 0 0 0 0 .71l2.79 2.79.79-.79a.5.5 0 0 0 0-.71l-.79-.79 2.79-2.79a.5.5 0 0 0 0-.71z"
+                                            ></path>
+                                        </svg>
+                                        <span>Philsein Cargo</span>
+                                    </Link>
+                                    <div className="relative inline-block">
+                                        <button
+                                            onClick={toggleDropdown}
+                                            className=" py-2.5 px-3.5 flex items-center  space-x-2 bg-gray-800 text-white hover:bg-gray-800 hover:text-white rounded"
+                                        >
+                                            <FaServicestack/>
+                                            <span>Specialized Services</span>
+                                            <svg
+                                                className={`w-4 h-4 arrow-down ${isOpen ? 'transform rotate-180' : ''}`}
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    d="M10 15l5-5H5l5 5z"
+                                                    clipRule="evenodd"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <div
+                                            className={`origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${menuClass}`}
+                                        >
+                                            <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-button">
+                                                {/* <Link to="/dashboard/transport/project-forwarding" className="block px-4 py-2 text-gray-700 hover:bg-gray-100" role="menuitem"> Project Forwarding</Link> */}
+                                                <Link to="/dashboard/transport/custom-clearance-services" className="block px-4 py-2 text-gray-700 hover:bg-gray-100" role="menuitem">Custom Clearance Services</Link>
+                                                <Link to="/dashboard/transport/cargo-packaging-and-lashing" className="block px-4 py-2 text-gray-700 hover:bg-gray-100" role="menuitem">Cargo Packaging and Lashing</Link>
+                                                <Link to="/dashboard/transport/cargo-escort-services" className="block px-4 py-2 text-gray-700 hover:bg-gray-100" role="menuitem">Cargo Escort Services</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <Link to="/dashboard/transport/queries" className=" py-2.5 px-4 flex items-center space-x-2 bg-gray-800 text-white hover:bg-gray-800 hover:text-white rounded">
+                                        <svg className="w-6 h-6" viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path className="cls-1" d="M41.47,7.28H6.53a2,2,0,0,0-2,1.88V31.41a2,2,0,0,0,2,1.88H9.14v7.43l8.26-7.43H41.47a2,2,0,0,0,2-1.88V9.16A2,2,0,0,0,41.47,7.28ZM14.25,17A3.25,3.25,0,1,1,11,20.29,3.24,3.24,0,0,1,14.25,17ZM24,23.54a3.25,3.25,0,1,1,3.25-3.25A3.26,3.26,0,0,1,24,23.54Zm9.75,0A3.25,3.25,0,1,1,37,20.29,3.26,3.26,0,0,1,33.75,23.54Z"></path></g></svg>
+                                        <span>Queries</span>
+                                    </Link>
+                                    <Link to="/dashboard/transport/requested-quote" className=" py-2.5 px-4 flex items-center space-x-2 bg-gray-800 text-white hover:bg-gray-800 hover:text-white rounded">
+                                        <svg className="w-6 h-6" viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path className="cls-1" d="M41.47,7.28H6.53a2,2,0,0,0-2,1.88V31.41a2,2,0,0,0,2,1.88H9.14v7.43l8.26-7.43H41.47a2,2,0,0,0,2-1.88V9.16A2,2,0,0,0,41.47,7.28ZM14.25,17A3.25,3.25,0,1,1,11,20.29,3.24,3.24,0,0,1,14.25,17ZM24,23.54a3.25,3.25,0,1,1,3.25-3.25A3.26,3.26,0,0,1,24,23.54Zm9.75,0A3.25,3.25,0,1,1,37,20.29,3.26,3.26,0,0,1,33.75,23.54Z"></path></g></svg>
+                                        <span>Requested Quotes</span>
+                                    </Link>
+                                    <Link to="/dashboard/transport/requested-quick-quote" className=" py-2.5 px-4 flex items-center space-x-2 bg-gray-800 text-white hover:bg-gray-800 hover:text-white rounded">
+                                        <svg className="w-6 h-6" viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path className="cls-1" d="M41.47,7.28H6.53a2,2,0,0,0-2,1.88V31.41a2,2,0,0,0,2,1.88H9.14v7.43l8.26-7.43H41.47a2,2,0,0,0,2-1.88V9.16A2,2,0,0,0,41.47,7.28ZM14.25,17A3.25,3.25,0,1,1,11,20.29,3.24,3.24,0,0,1,14.25,17ZM24,23.54a3.25,3.25,0,1,1,3.25-3.25A3.26,3.26,0,0,1,24,23.54Zm9.75,0A3.25,3.25,0,1,1,37,20.29,3.26,3.26,0,0,1,33.75,23.54Z"></path></g></svg>
+                                        <span>Requested Quick Quotes</span>
+                                    </Link>
                                 </div>
                             </div>
                             {/* PROFILE */}
@@ -63,11 +130,11 @@ const layout = (props) => {
                         <div className="md:hidden justify-between items-center bg-black text-white flex">
                             <h1 className="text-2xl font-bold px-4">Philsein inc</h1>
                             <button className="btn p-4 focus:outline-none hover:bg-gray-800">
-                                    <img src={logo} className="w-32 h-19 rounded-lg p-1" />
+                                <img src={logo} className="w-32 h-19 rounded-lg p-1" />
                             </button>
                         </div>
                         <section className="max-w-7xl mx-auto py-4 px-5 mb-14">
-                            <ToastContainer/>
+                            <ToastContainer />
                             {props.children}
                         </section>
                     </main>

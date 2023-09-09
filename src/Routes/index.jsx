@@ -29,6 +29,13 @@ import FAQ from '../Pages/FAQ'
 import HISTORY from '../Pages/history'
 import ADVANTAGES from '../Pages/advantages'
 import VALUES from '../Pages/values'
+import TransportQueries from '../dashboad/transportQueries'
+import CargoPackagingandLashing from  "../dashboad/CargoPackagingandLashing"
+import CargoEscortServices from '../dashboad/cargoEscortServices'
+import CustomClearanceServices from '../dashboad/customClearanceServices'
+import ProjectForwarding from '../dashboad/projectForwarding'
+import RequestedQuickQuote from '../dashboad/requestedQuickQuote'
+import RequestedQuote from '../dashboad/requestedQuote'
 
 export default function index() {
   return (
@@ -68,6 +75,13 @@ export default function index() {
         <Route path="/dashboard/blogs" element={<Blogs />} />
         <Route path="/dashboard/queries" element={<Queries />} />
         <Route path="/dashboard/staff-apps" element={<Staff_forms />} />
+        <Route path="/dashboard/transport/queries" element={<TransportQueries />} />
+        <Route path="/dashboard/transport/cargo-escort-services" element={<CargoEscortServices/>} />
+        <Route path="/dashboard/transport/cargo-packaging-and-lashing" element={<CargoPackagingandLashing />} />
+        <Route path="/dashboard/transport/custom-clearance-services" element={<CustomClearanceServices />} />
+        <Route path="/dashboard/transport/project-forwarding" element={<ProjectForwarding />} />
+        <Route path="/dashboard/transport/requested-quick-quote" element={<RequestedQuickQuote />} />
+        <Route path="/dashboard/transport/requested-quote" element={<RequestedQuote />} />
         <Route
           path="/job-prepose-aux-beneficiaires"
           element={<JobPreposeAuxBeneficiaires />}
