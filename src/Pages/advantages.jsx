@@ -16,7 +16,7 @@ const Advantages = () => {
               <img
                 className="w-full rounded-lg sm:w-auto sm:h-64 mx-auto mb-4"
                 src={health}
-                alt="Philsein inc"
+                alt="Ssein sante"
               />
             </div>
             <div className="sm:w-2/3">
@@ -60,7 +60,7 @@ const Advantages = () => {
                 <p className="text-gray-700">
                   Modifiez vos disponibilités en tout temps directement sur
                   votre appareil mobile ou un ordinateur. Que ce soit en
-                  journée, en soirée ou pendant la nuit, le Philsein inc saura
+                  journée, en soirée ou pendant la nuit, le Ssein sante saura
                   vous trouver des mandats adaptés à vos préférences.
                 </p>
               </div>

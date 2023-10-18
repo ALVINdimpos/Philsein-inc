@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
       name: 'Charline F.',
       role: '',
       message:
-        "Faisant partie du Philsein inc depuis avril 2019, je peux dire qu’entant que nouvelle infirmière auxiliaire, j'ai littéralement pris mon envol! ",
+        "Faisant partie du Ssein sante depuis avril 2019, je peux dire qu’entant que nouvelle infirmière auxiliaire, j'ai littéralement pris mon envol! ",
       imageUrl:
         'https://media.istockphoto.com/id/174928155/photo/young-man-receiving-chemotherapy-at-home.jpg?s=612x612&w=0&k=20&c=t24S1llmrmSDJqOaW3PzLl7yyhuVIpvTz55rk3xVDCM=',
     },

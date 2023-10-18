@@ -58,7 +58,7 @@ const Footer = () => {
           </Link>
         </li>
       </ul>
-      <p>©2023 Philsein inc| All Rights Reserved</p>
+      <p>©2023 Ssein sante| All Rights Reserved</p>
     </footer>
   )
 }

@@ -234,9 +234,8 @@ const layout = (props) => {
                       <FaServicestack />
                       <span>Specialized Services</span>
                       <svg
-                        className={`w-4 h-4 arrow-down ${
-                          isOpen ? 'transform rotate-180' : ''
-                        }`}
+                        className={`w-4 h-4 arrow-down ${isOpen ? 'transform rotate-180' : ''
+                          }`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -397,7 +396,7 @@ const layout = (props) => {
           {/* PAGE CONTENT */}
           <main className="flex-1 h-screen overflow-y-scroll overflow-x-hidden">
             <div className="md:hidden justify-between items-center bg-black text-white flex">
-              <h1 className="text-2xl font-bold px-4">Philsein inc</h1>
+              <h1 className="text-2xl font-bold px-4">Ssein sante</h1>
               <button className="btn p-4 focus:outline-none hover:bg-gray-800">
                 <img src={logo} className="w-32 h-19 rounded-lg p-1" />
               </button>

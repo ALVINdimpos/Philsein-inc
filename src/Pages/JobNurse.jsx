@@ -32,7 +32,7 @@ const JobNurse = () => {
               soins pour vos patients.
             </p>
             <p>
-              Finalement, au Philsein inc, vous aurez également la chance
+              Finalement, au Ssein sante, vous aurez également la chance
               d’occuper un poste d’Assistant(e) supérieur immédiat (ASI), ou de
               coordonnatrice des soins, selon votre expérience et formation.
             </p>

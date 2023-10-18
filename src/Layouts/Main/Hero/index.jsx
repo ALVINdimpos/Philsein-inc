@@ -7,7 +7,7 @@ const index = () => {
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1 className="company-name">Philsein inc</h1>
+        <h1 className="company-name">Ssein sante</h1>
         <h2 className="slogan">Agence de placement en santé</h2>
         <p className="description">
           Notre agence de placement en santé offre une plus grande mainmise sur

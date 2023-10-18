@@ -14,7 +14,7 @@ const JobPhysiotherapist = () => {
             <p>
               Êtes-vous un physiothérapeute à la recherche des meilleures
               perspectives d'emplois en régions? Alors nous aimerions vous
-              compter parmi notre équipe! Chez Philsein inc, nous sommes
+              compter parmi notre équipe! Chez Ssein sante, nous sommes
               l'agence de placement qui laisse les physiothérapeutes être en
               charge!
             </p>
