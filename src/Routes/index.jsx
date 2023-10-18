@@ -32,10 +32,10 @@ import VALUES from '../Pages/values'
 import TransportQue from '../dashboad/TransportQ.jsx'
 import CargoPackagingandLashing from '../dashboad/CargoPackagingandLashing'
 import CargoEscortServices from '../dashboad/cargoEscortServices'
-import CustomClearanceServices from '../dashboad/customClearanceServices'
-import ProjectForwarding from '../dashboad/projectForwarding'
-import RequestedQuickQuote from '../dashboad/requestedQuickQuote'
-import RequestedQuote from '../dashboad/requestedQuote'
+import CustomClearanceServices from '../dashboad/CustomClearanceSe'
+import ProjectForwarding from '../dashboad/ProjectForward'
+import RequestedQuickQuote from '../dashboad/RequestedQuickQuo'
+import RequestedQuote from '../dashboad/RequestedQuo'
 
 export default function index() {
   return (
