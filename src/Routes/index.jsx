@@ -29,7 +29,7 @@ import FAQ from '../Pages/FAQ'
 import HISTORY from '../Pages/history'
 import ADVANTAGES from '../Pages/advantages'
 import VALUES from '../Pages/values'
-import TransportQueries from '../dashboad/TransportQueries.jsx'
+import TransportQue from '../dashboad/TransportQ.jsx'
 import CargoPackagingandLashing from '../dashboad/CargoPackagingandLashing'
 import CargoEscortServices from '../dashboad/cargoEscortServices'
 import CustomClearanceServices from '../dashboad/customClearanceServices'
@@ -77,7 +77,7 @@ export default function index() {
         <Route path="/dashboard/staff-apps" element={<Staff_forms />} />
         <Route
           path="/dashboard/transport/queries"
-          element={<TransportQueries />}
+          element={<TransportQue />}
         />
         <Route
           path="/dashboard/transport/cargo-escort-services"

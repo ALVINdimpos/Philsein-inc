@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify'
 
-export default function TransportQueries() {
+export default function TransportQ() {
   const [querries, setQueries] = useState([])
   useEffect(() => {
     // Fetch the data using axios GET request
