@@ -29,7 +29,7 @@ import FAQ from '../Pages/FAQ'
 import HISTORY from '../Pages/history'
 import ADVANTAGES from '../Pages/advantages'
 import VALUES from '../Pages/values'
-import TransportQueries from '../dashboad/transportQueries'
+import TransportQueries from '../dashboad/TransportQueries.jsx'
 import CargoPackagingandLashing from  "../dashboad/CargoPackagingandLashing"
 import CargoEscortServices from '../dashboad/cargoEscortServices'
 import CustomClearanceServices from '../dashboad/customClearanceServices'
