@@ -30,7 +30,7 @@ import HISTORY from '../Pages/history'
 import ADVANTAGES from '../Pages/advantages'
 import VALUES from '../Pages/values'
 import TransportQueries from '../dashboad/TransportQueries.jsx'
-import CargoPackagingandLashing from  "../dashboad/CargoPackagingandLashing"
+import CargoPackagingandLashing from '../dashboad/CargoPackagingandLashing'
 import CargoEscortServices from '../dashboad/cargoEscortServices'
 import CustomClearanceServices from '../dashboad/customClearanceServices'
 import ProjectForwarding from '../dashboad/projectForwarding'
@@ -75,13 +75,34 @@ export default function index() {
         <Route path="/dashboard/blogs" element={<Blogs />} />
         <Route path="/dashboard/queries" element={<Queries />} />
         <Route path="/dashboard/staff-apps" element={<Staff_forms />} />
-        <Route path="/dashboard/transport/queries" element={<TransportQueries />} />
-        <Route path="/dashboard/transport/cargo-escort-services" element={<CargoEscortServices/>} />
-        <Route path="/dashboard/transport/cargo-packaging-and-lashing" element={<CargoPackagingandLashing />} />
-        <Route path="/dashboard/transport/custom-clearance-services" element={<CustomClearanceServices />} />
-        <Route path="/dashboard/transport/project-forwarding" element={<ProjectForwarding />} />
-        <Route path="/dashboard/transport/requested-quick-quote" element={<RequestedQuickQuote />} />
-        <Route path="/dashboard/transport/requested-quote" element={<RequestedQuote />} />
+        <Route
+          path="/dashboard/transport/queries"
+          element={<TransportQueries />}
+        />
+        <Route
+          path="/dashboard/transport/cargo-escort-services"
+          element={<CargoEscortServices />}
+        />
+        <Route
+          path="/dashboard/transport/cargo-packaging-and-lashing"
+          element={<CargoPackagingandLashing />}
+        />
+        <Route
+          path="/dashboard/transport/custom-clearance-services"
+          element={<CustomClearanceServices />}
+        />
+        <Route
+          path="/dashboard/transport/project-forwarding"
+          element={<ProjectForwarding />}
+        />
+        <Route
+          path="/dashboard/transport/requested-quick-quote"
+          element={<RequestedQuickQuote />}
+        />
+        <Route
+          path="/dashboard/transport/requested-quote"
+          element={<RequestedQuote />}
+        />
         <Route
           path="/job-prepose-aux-beneficiaires"
           element={<JobPreposeAuxBeneficiaires />}

@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router'
 import { useState } from 'react'
 
 const ApplicationForm = () => {
-
   const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     first_name: '',
@@ -23,34 +22,35 @@ const ApplicationForm = () => {
     resume: '',
     regions: [],
     schedule: [],
-    resume_by_email: 'true'
+    resume_by_email: 'true',
   })
   const navigate = useNavigate()
 
   const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
-    let Address = [];
+    const { name, value, type, checked } = event.target
+    let Address = []
 
     if (name === 'address1') {
-      Address = formData.address;
-      Address[0] = value;
-      setFormData((prevData) => ({ ...prevData, address: Address }));
-      return;
+      Address = formData.address
+      Address[0] = value
+      setFormData((prevData) => ({ ...prevData, address: Address }))
+      return
     }
 
     if (name === 'address2') {
-      Address = formData.address;
-      Address[1] = value;
-      setFormData((prevData) => ({ ...prevData, address: Address }));
-      return;
+      Address = formData.address
+      Address[1] = value
+      setFormData((prevData) => ({ ...prevData, address: Address }))
+      return
     }
 
-    if (name === 'resume') { // Handle the resume input
+    if (name === 'resume') {
+      // Handle the resume input
       setFormData((prevData) => ({
         ...prevData,
         [name]: value,
-      }));
-      return;
+      }))
+      return
     }
 
     // Handle other input fields
@@ -62,30 +62,33 @@ const ApplicationForm = () => {
             ? [...prevData[name], value]
             : prevData[name].filter((item) => item !== value)
           : value,
-    }));
-  };
+    }))
+  }
 
   const handleSubmit = async (event) => {
-    setIsLoading(true);
-    event.preventDefault();
-    console.log('Form Values:', formData); // Log the formData to see if resume is populated
+    setIsLoading(true)
+    event.preventDefault()
+    console.log('Form Values:', formData) // Log the formData to see if resume is populated
 
     try {
-      const response = await axios.post('https://cautious-erin-pig.cyclic.app/apply', formData);
-      console.log('API Response:', response.data);
-      toast.success('Votre candidature a été envoyée avec succès');
-    
-   // reload window
-   setTimeout(() => {
-    navigate("/")
-  }, 3000)
+      const response = await axios.post(
+        'https://cautious-erin-pig.cyclic.app/apply',
+        formData
+      )
+      console.log('API Response:', response.data)
+      toast.success('Votre candidature a été envoyée avec succès')
+
+      // reload window
+      setTimeout(() => {
+        navigate('/')
+      }, 3000)
       // Handle the API response here
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error)
       // Handle errors here if any
-      toast.error('Une erreur est survenue');
+      toast.error('Une erreur est survenue')
     }
-  };
+  }
 
   const regions = [
     'Gaspésie',
@@ -123,7 +126,7 @@ const ApplicationForm = () => {
     'Inhalothérapeute',
     'Ergothérapeute',
     'Adjoint(e) à la répartition',
-   'Préposé(e) aux bénéficiaires'
+    'Préposé(e) aux bénéficiaires',
   ]
   return (
     <>
@@ -348,52 +351,51 @@ const ApplicationForm = () => {
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
-              Veuillez envoyer votre CV par courriel à info@philsein.com
+                Veuillez envoyer votre CV par courriel à info@philsein.com
               </label>
-              <div className='hidden'>
-              <div className="flex items-center">
-                <input
-                  type="radio"
-                  name="resume_by_email"
-                  value="true"
-                  checked={formData.resume_by_email === 'true'}
-                  onChange={handleChange}
-                  className="form-radio h-5 w-5 text-cyan-600"
-                />
-                <label className="ml-2 block text-gray-700">Oui</label>
-              </div>
-              <div className="flex items-center">
-                <input
-                  type="radio"
-                  name="resume_by_email"
-                  value="false"
-                  checked={formData.resume_by_email === 'false'}
-                  onChange={handleChange}
-                  className="form-radio h-5 w-5 text-cyan-600"
-                />
-                <label className="ml-2 block text-gray-700">Non</label>
-              </div>
+              <div className="hidden">
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    name="resume_by_email"
+                    value="true"
+                    checked={formData.resume_by_email === 'true'}
+                    onChange={handleChange}
+                    className="form-radio h-5 w-5 text-cyan-600"
+                  />
+                  <label className="ml-2 block text-gray-700">Oui</label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    name="resume_by_email"
+                    value="false"
+                    checked={formData.resume_by_email === 'false'}
+                    onChange={handleChange}
+                    className="form-radio h-5 w-5 text-cyan-600"
+                  />
+                  <label className="ml-2 block text-gray-700">Non</label>
+                </div>
               </div>
             </div>
             <div className="mb-4 hidden">
               <label className="block text-gray-700 font-semibold mb-2">
-              Génial! Entrez l'URL du CV ici ⬇️ *
+                Génial! Entrez l'URL du CV ici ⬇️ *
               </label>
               <input
-            type="url"
-            name="resume"
-            id="resume" // Make sure this ID is unique within your document
-            value={formData.resume} // Bind the value to formData.resume
-            onChange={handleChange}
-            className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500  "
-          />
+                type="url"
+                name="resume"
+                id="resume" // Make sure this ID is unique within your document
+                value={formData.resume} // Bind the value to formData.resume
+                onChange={handleChange}
+                className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500  "
+              />
             </div>
             <button
               type="submit"
               className="btn-submit w-full py-3 rounded-lg text-white font-bold bg-gradient-to-r from-cyan-400 to-blue-700 hover:opacity-90 transition-colors duration-300"
             >
-               {isLoading ? <Loading size="5" color='black' /> : 'Soumettre'}
-              
+              {isLoading ? <Loading size="5" color="black" /> : 'Soumettre'}
             </button>
           </form>
         </div>

@@ -28,7 +28,10 @@ const Footer = () => {
           </a>
         </li>
         <li className="social-icons__item">
-          <a className="social-icons__link" href="https://www.instagram.com/Philsein_inc">
+          <a
+            className="social-icons__link"
+            href="https://www.instagram.com/Philsein_inc"
+          >
             <FaInstagram />
           </a>
         </li>
@@ -50,7 +53,7 @@ const Footer = () => {
           </a>
         </li>
         <li className="Menu__item">
-          <Link to="/contact" className="Menu__link" >
+          <Link to="/contact" className="Menu__link">
             Contact
           </Link>
         </li>

@@ -68,7 +68,6 @@ const ContactUs = () => {
               </p>
             </div>
 
-
             <div className="mb-6">
               <h2 className="text-xl font-bold mb-2">Email</h2>
               <p className="flex items-center">
@@ -135,8 +134,7 @@ const ContactUs = () => {
                 type="submit"
                 className="btn-submit w-full py-2 rounded-lg text-white font-bold bg-gradient-to-r from-cyan-300 to-cyan-700 hover:opacity-90 transition-colors duration-300"
               >
-                {isLoading ? <Loading size="5" color='black' /> : 'Soumettre'}
-
+                {isLoading ? <Loading size="5" color="black" /> : 'Soumettre'}
               </button>
             </form>
           </div>

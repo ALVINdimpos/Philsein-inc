@@ -4,7 +4,7 @@ import '../assets/Style/Referral.css'
 import Footer from '../Layouts/Footer/index'
 import HEADER from '../Layouts/Header/index'
 import { ToastContainer, toast } from 'react-toastify'
-import Loading from '../Components/Loading/Index';
+import Loading from '../Components/Loading/Index'
 import { useNavigate } from 'react-router'
 const ReferralProgram = () => {
   const [formData1, setFormData1] = useState({
@@ -129,11 +129,11 @@ const ReferralProgram = () => {
                   {/* Show the message when "No" is selected */}
                   {formData1.relationship_with_referer_with_referer ===
                     'no' && (
-                      <p className="text-red-500 mt-2">
-                        Il faut être un employé du Philsein inc pour profiter de
-                        notre programme de référencement!
-                      </p>
-                    )}
+                    <p className="text-red-500 mt-2">
+                      Il faut être un employé du Philsein inc pour profiter de
+                      notre programme de référencement!
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -200,8 +200,11 @@ const ReferralProgram = () => {
                   type="submit"
                   className="btn block w-full py-4 px-6  text-white font-bold text-xl rounded cursor-pointer"
                 >
-                  {isLoading ? <Loading size="5" color='black' /> : 'Prochaine page'}
-
+                  {isLoading ? (
+                    <Loading size="5" color="black" />
+                  ) : (
+                    'Prochaine page'
+                  )}
                 </button>
               </div>
             </form>
@@ -301,15 +304,16 @@ const ReferralProgram = () => {
                   className="form-input w-full h-10 px-3 border rounded-lg focus:outline-none focus:border-blue-500"
                   name="relationship_with_referer"
                   onChange={handleChange2}
-                  style={{ color: "black" }} // Add this inline style
+                  style={{ color: 'black' }} // Add this inline style
                 >
                   <option value="">Veuillez sélectionner</option>
-                  <option value="Collègue de travail">Collègue de travail</option>
+                  <option value="Collègue de travail">
+                    Collègue de travail
+                  </option>
                   <option value="Ami(e)">Ami(e)</option>
                   <option value="Inconnu(e)">Inconnu(e)</option>
                 </select>
               </div>
-
 
               <div className=" flex justify-between gap-3 text-center ">
                 <button
@@ -322,8 +326,7 @@ const ReferralProgram = () => {
                   type="submit"
                   className="btn block w-full py-4 px-6  text-white font-bold text-xl rounded cursor-pointer"
                 >
-                  {isLoading ? <Loading size="5" color='black' /> : 'Soumettre'}
-
+                  {isLoading ? <Loading size="5" color="black" /> : 'Soumettre'}
                 </button>
               </div>
             </form>

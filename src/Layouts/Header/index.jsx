@@ -1,25 +1,25 @@
-import { useState } from 'react';
-import logo from '../../assets/Images/logo.svg';
-import { RiArrowDropDownLine } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
-import './style.css';
+import { useState } from 'react'
+import logo from '../../assets/Images/logo.svg'
+import { RiArrowDropDownLine } from 'react-icons/ri'
+import { Link } from 'react-router-dom'
+import './style.css'
 
 const Navigation = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isEmploisMenuOpen, setIsEmploisMenuOpen] = useState(false);
-  const [isAProposMenuOpen, setIsAProposMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isEmploisMenuOpen, setIsEmploisMenuOpen] = useState(false)
+  const [isAProposMenuOpen, setIsAProposMenuOpen] = useState(false)
 
   const handleMobileMenuClick = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
   const handleEmploisMenuClick = () => {
-    setIsEmploisMenuOpen(!isEmploisMenuOpen);
-  };
+    setIsEmploisMenuOpen(!isEmploisMenuOpen)
+  }
 
   const handleAProposMenuClick = () => {
-    setIsAProposMenuOpen(!isAProposMenuOpen);
-  };
+    setIsAProposMenuOpen(!isAProposMenuOpen)
+  }
 
   return (
     <header className="header">
@@ -76,7 +76,10 @@ const Navigation = () => {
                   to="/job-nurse-auxiliary"
                   title="Infirmière auxiliaire"
                 />
-                <NavItem to="/job-prepose-aux-beneficiaires" title="Préposé(e) aux bénéficiaires" />
+                <NavItem
+                  to="/job-prepose-aux-beneficiaires"
+                  title="Préposé(e) aux bénéficiaires"
+                />
                 <NavItem to="/job-physiotherapist" title="Physiothérapeute" />
                 <NavItem to="/job-social-worker" title="Travailleur social" />
                 <NavItem
@@ -119,8 +122,8 @@ const Navigation = () => {
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
 
 const NavItem = ({ to, title, onClick }) => {
   return (
@@ -129,7 +132,7 @@ const NavItem = ({ to, title, onClick }) => {
         {title}
       </Link>
     </li>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

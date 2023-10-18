@@ -1,9 +1,9 @@
 // Import the required components and CSS files
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
-import SlidingCard from './SlidingCard';
-import '../../assets/Style/slider-carousel.css';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import Slider from 'react-slick'
+import SlidingCard from './SlidingCard'
+import '../../assets/Style/slider-carousel.css'
 
 const SliderCarousel = () => {
   const data = [
@@ -37,7 +37,8 @@ const SliderCarousel = () => {
       salary: "À partir de 46$ de l'heure",
       location:
         "Choisissez l'emplacement et le type d'établissement de votre choix! Postes disponibles partout à travers le Québec",
-      schedule: 'Flexible. Possibilité de moduler son horaire selon ses disponibilités',
+      schedule:
+        'Flexible. Possibilité de moduler son horaire selon ses disponibilités',
       workingCondition: 'Postes disponibles partout à travers le Québec.',
       link: 'job-prepose-aux-beneficiaires',
     },

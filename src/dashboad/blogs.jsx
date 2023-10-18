@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Layout from './layout'
-import {formatDate} from '../Services/Utils/index';
-import {toast} from 'react-toastify';
+import { formatDate } from '../Services/Utils/index'
+import { toast } from 'react-toastify'
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([])
@@ -10,58 +10,64 @@ export default function Blogs() {
   const [deleteBlog, _] = useState('')
 
   useEffect(async () => {
-      const getApps = async () => {
-          const config = {
-              headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`
-              }
-          }
-          const res = await (await fetch("https://cautious-erin-pig.cyclic.app/blogs/all", config)).json();
-          setBlogs(_ => res.data);
-          const uRead = res.data.filter(item => item.publish==false);
-          const Read = res.data.filter(item => item.publish==true);
-          setPublished(_ => Read?.length);
-          setUnpublished(_ => uRead?.length);
+    const getApps = async () => {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
       }
+      const res = await (
+        await fetch('https://cautious-erin-pig.cyclic.app/blogs/all', config)
+      ).json()
+      setBlogs((_) => res.data)
+      const uRead = res.data.filter((item) => item.publish == false)
+      const Read = res.data.filter((item) => item.publish == true)
+      setPublished((_) => Read?.length)
+      setUnpublished((_) => uRead?.length)
+    }
     getApps()
   }, [])
 
   const DeleteBlog = async (deleteBlog) => {
-      if(deleteBlog?.length < 1) {
-          return 0
-      }
-      const config = {
-          headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`
-          }
-      }
-      const res = await (await fetch(`https://cautious-erin-pig.cyclic.app/blogs/${deleteBlog}`, {
-          "method": "DELETE",
-          ...config
-      })).json();
-      if (res.status === 200) {
-          toast.success(res.message, {toastId: `${deleteBlog}`})
-          setBlogs(prev => prev.filter(app => app._id != deleteBlog))
-      }
-      return 1
+    if (deleteBlog?.length < 1) {
+      return 0
+    }
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    }
+    const res = await (
+      await fetch(`https://cautious-erin-pig.cyclic.app/blogs/${deleteBlog}`, {
+        method: 'DELETE',
+        ...config,
+      })
+    ).json()
+    if (res.status === 200) {
+      toast.success(res.message, { toastId: `${deleteBlog}` })
+      setBlogs((prev) => prev.filter((app) => app._id != deleteBlog))
+    }
+    return 1
   }
   const publishBlog = async (publishBlog) => {
-      if(publishBlog?.length < 1) {
-          return 0
-      }
-      const config = {
-          headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`
-          }
-      }
-      const res = await (await fetch(`https://cautious-erin-pig.cyclic.app/blogs/${publishBlog}`, {
-          "method": "PATCH",
-          ...config
-      })).json();
-      if (res.status === 200) {
-          toast.success(res.message, {toastId: `${publishBlog}`})
-      }
-      return 1
+    if (publishBlog?.length < 1) {
+      return 0
+    }
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    }
+    const res = await (
+      await fetch(`https://cautious-erin-pig.cyclic.app/blogs/${publishBlog}`, {
+        method: 'PATCH',
+        ...config,
+      })
+    ).json()
+    if (res.status === 200) {
+      toast.success(res.message, { toastId: `${publishBlog}` })
+    }
+    return 1
   }
 
   const handleDelete = (e) => {

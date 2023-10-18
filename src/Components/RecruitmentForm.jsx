@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import Cards from '../Components/Card/index'
 import '../assets/Style/Recruitment.css'
-import Loading from '../Components/Loading/Index';
+import Loading from '../Components/Loading/Index'
 import { ToastContainer, toast } from 'react-toastify'
 
 const RecruitmentForm = () => {
@@ -30,7 +30,10 @@ const RecruitmentForm = () => {
     e.preventDefault()
     setIsLoading(true)
     try {
-      const response = await axios.post('https://cautious-erin-pig.cyclic.app/staff', formData)
+      const response = await axios.post(
+        'https://cautious-erin-pig.cyclic.app/staff',
+        formData
+      )
       console.log('API Response:', response.data)
       toast.success('Votre message a été envoyé avec succès')
       setIsLoading(false) // Clear the form fields
@@ -67,7 +70,10 @@ const RecruitmentForm = () => {
           Remplissez le formulaire pour obtenir le personnel dont vous avez
           besoin !
         </h2>
-        <form onSubmit={handleSubmit} className=" bg-white p-8 rounded-lg shadow-md max-w-lg mx-auto" >
+        <form
+          onSubmit={handleSubmit}
+          className=" bg-white p-8 rounded-lg shadow-md max-w-lg mx-auto"
+        >
           <div className="mb-2">
             <label htmlFor="first_name" className="block font-semibold mb-1">
               Je veux embaucher
@@ -215,8 +221,11 @@ const RecruitmentForm = () => {
             type="submit"
             className="button max-w-sm mx-auto bg-gradient-to-r from-cyan-400 to-cyan-700 rounded-lg p-4"
           >
-            
-            {isLoading ? <Loading size="5" color='black' /> : 'OBTENIR DU PERSONNEL QUALIFIÉ DÈS MAINTENANT'}
+            {isLoading ? (
+              <Loading size="5" color="black" />
+            ) : (
+              'OBTENIR DU PERSONNEL QUALIFIÉ DÈS MAINTENANT'
+            )}
           </button>
         </form>
         <ToastContainer />

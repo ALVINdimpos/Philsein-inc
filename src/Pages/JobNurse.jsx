@@ -152,7 +152,7 @@ const JobNurse = () => {
               ainsi que la maîtrise des protocoles de soins et des processus de
               documentation.
             </p>
-            <p  className='mb-5'>
+            <p className="mb-5">
               Finalement, en tant qu'infirmière chez notre agence de placement,
               vous devrez être capable de vous adapter à des environnements de
               soins différents.
