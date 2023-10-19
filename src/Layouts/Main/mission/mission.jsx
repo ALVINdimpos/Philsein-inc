@@ -6,7 +6,7 @@ const Mission = () => {
       <div className="mission-content">
         <h2>Un désir de faire mieux</h2>
         <p>
-          Le Ssein sante est une agence de placement en santé née de la mission
+          Le ssein santé est une agence de placement en santé née de la mission
           de ses fondateurs. Celle d’être un réel soutien pour les
           établissements et les professionnels du réseau de la santé…
         </p>

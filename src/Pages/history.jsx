@@ -12,13 +12,13 @@ const History = () => {
             <img
               className="w-full rounded-lg sm:w-auto sm:h-64 mx-auto mb-4"
               src={health}
-              alt="Ssein sante"
+              alt="ssein santé"
             />
           </div>
           <div className="sm:w-1/2">
             <h1 className="text-4xl font-bold text-gray-800 mb-6">Histoire</h1>
             <p className="text-lg text-gray-700 mb-4">
-              Le Ssein sante est né de la mission de ses fondateurs.
+              Le ssein santé est né de la mission de ses fondateurs.
             </p>
             <p className="text-lg text-gray-700 mb-4">
               Celle d'être un réel soutien pour les établissements et les
@@ -39,7 +39,7 @@ const History = () => {
               pour les établissements de santé.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              Le Ssein sante se démarque par son expertise, qui lui permet de
+              Le ssein santé se démarque par son expertise, qui lui permet de
               recruter les meilleurs talents pour ses partenaires et surtout de
               les déployer le plus rapidement possible sur le terrain. Pour ces
               talents en question, ils ont enfin accès à un partenaire avec leur

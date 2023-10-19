@@ -101,7 +101,7 @@ const ReferralProgram = () => {
             >
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
-                  Êtes-vous présentement un employé du Ssein sante?
+                  Êtes-vous présentement un employé du ssein santé?
                 </label>
                 <div className="mt-2 flex">
                   <label className="inline-flex items-center mr-4">
@@ -130,7 +130,7 @@ const ReferralProgram = () => {
                   {formData1.relationship_with_referer_with_referer ===
                     'no' && (
                       <p className="text-red-500 mt-2">
-                        Il faut être un employé du Ssein sante pour profiter de
+                        Il faut être un employé du ssein santé pour profiter de
                         notre programme de référencement!
                       </p>
                     )}

@@ -26,7 +26,7 @@ const Navigation = () => {
       <nav className="bg-gradient-to-r from-cyan to-blue p-4 md:p-6 flex flex-col md:flex-row items-center justify-between">
         <div className="navbar-logo">
           <Link to="/">
-            <img src={logo} alt="Logo" className="h-12" />
+            <img src={logo} alt="Logo" className="h-12 mt-[-16px]" />
           </Link>
         </div>
 

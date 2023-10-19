@@ -6,17 +6,17 @@ const OurValues = () => {
     {
       title: 'Innovation',
       description:
-        'Repenser de manière ingénieuse la gestion du personnel de la santé est au cœur de ce qui propulse le Ssein sante.',
+        'Repenser de manière ingénieuse la gestion du personnel de la santé est au cœur de ce qui propulse le ssein santé.',
     },
     {
       title: 'Professionnalisme',
       description:
-        'Que ce soit envers nos partenaires ou envers nos professionnels, les collaborateurs du Ssein sante profitent d’une équipe à la hauteur de leurs attentes en termes de professionnalisme. Nous nous distinguons entre autres, grâce à notre ponctualité, notre réactivité et une courtoisie hors pair.',
+        'Que ce soit envers nos partenaires ou envers nos professionnels, les collaborateurs du ssein santé profitent d’une équipe à la hauteur de leurs attentes en termes de professionnalisme. Nous nous distinguons entre autres, grâce à notre ponctualité, notre réactivité et une courtoisie hors pair.',
     },
     {
       title: 'Bienveillance',
       description:
-        'Plusieurs équipes travaillant étroitement ensemble pour le bien-être de nos professionnels de la santé, tout en étant un soutien pour le système de la santé. C’est comme cela que nous démontrons notre bienveillance, qui est une valeur clé chez le Ssein sante.',
+        'Plusieurs équipes travaillant étroitement ensemble pour le bien-être de nos professionnels de la santé, tout en étant un soutien pour le système de la santé. C’est comme cela que nous démontrons notre bienveillance, qui est une valeur clé chez le ssein santé.',
     },
     {
       title: 'Transparence',
